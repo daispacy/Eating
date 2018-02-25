@@ -23,7 +23,7 @@ class CoreDataStack: NSObject {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "BUUP")
+        let container = NSPersistentContainer(name: "Eating")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -70,7 +70,7 @@ extension CoreDataStack {
             print(url.absoluteString)
             let checkDeletaOldData = UserDefaults.standard.bool(forKey: "App:DeleteOldCoreData")
             if !checkDeletaOldData {
-                let storeURL: URL = url.appendingPathComponent("/BUUP.sqlite") as URL
+                let storeURL: URL = url.appendingPathComponent("/Eating.sqlite") as URL
                 do {
                     try? FileManager.default.removeItem(at: storeURL)
                     UserDefaults.standard.set(true, forKey: "App:DeleteOldCoreData")

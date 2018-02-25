@@ -1,15 +1,13 @@
 //
 //  AppConfig.swift
-//  BUUP
+//  Eating
 //
 //  Created by Dai Pham on 11/7/17.
-//  Copyright © 2017 Sunrise Software Solutions. All rights reserved.
+//  Copyright © 2018 Eating VIETNAM. All rights reserved.
 //
 
 import Foundation
 import Localize_Swift
-import FacebookLogin
-import FBSDKLoginKit
 
 class AppConfig: NSObject {
     
@@ -91,94 +89,57 @@ class AppConfig: NSObject {
     
     // MARK: - navigation
     class navigation: AppConfig {
-        static func logOut() {
-            let loginManage = LoginManager()
-            loginManage.logOut()
-            FBSDKAccessToken.setCurrent(nil)
-            UserDefaults.standard.set(false, forKey: "APP::HadShowelcome")
-            AccountManager.reset {
-                Server.shared.logout()
-                let vc = AuthenticController(nibName: "AuthenticController", bundle: Bundle.main)
-                AppConfig.navigation.changeRootControllerTo(viewcontroller: vc,animated: true)
-            }
-        }
-        
-        static func gotoHomeAfterSigninSuccess() {
-            
-            let vc = BaseTabbarController()
-            let uinaviVC1 = UINavigationController.init(rootViewController: HomeController(nibName: "HomeController", bundle: Bundle.main))
-            let uinaviVC2 = UINavigationController.init(rootViewController: PrepareLiveController())
-            let uinaviVC3 = UINavigationController.init(rootViewController: GroupController(nibName: "GroupController", bundle: Bundle.main))
-            let uinaviVC4 = UINavigationController.init(rootViewController: CalendarController(nibName: "CalendarController", bundle: Bundle.main))
-            let uinaviVC5 = UINavigationController.init(rootViewController: OrderManagementController(nibName: "OrderManagementController", bundle: Bundle.main))
-            
-            vc.setViewControllers([uinaviVC1,uinaviVC4,uinaviVC2,uinaviVC5,uinaviVC3], animated: true)
-            
-            let itemHome = UITabBarItem(title: nil, image: UIImage(named: "ic_home_96")?.tint(with: UIColor(hex:"0x5b5b5b")).withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "ic_home_96")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal))
-            uinaviVC1.tabBarItem  = itemHome
-
-            let itemLiveStream = UITabBarItem(title: nil, image: UIImage(named: "ic_live_128")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "ic_live_128")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal))
-            uinaviVC2.tabBarItem  = itemLiveStream
-
-            let itemGroup = UITabBarItem(title: nil, image: UIImage(named: "ic_group_96")?.tint(with: UIColor(hex:"0x5b5b5b")).withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "ic_group_96")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal))
-            uinaviVC3.tabBarItem  = itemGroup
-
-            let itemCalendar = UITabBarItem(title: nil, image: UIImage(named: "ic_bt_schedule")?.tint(with: UIColor(hex:"0x5b5b5b")).withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "ic_bt_schedule_selected")?.withRenderingMode(.alwaysOriginal))
-            uinaviVC4.tabBarItem  = itemCalendar
-
-            let itemCommu = UITabBarItem(title: nil, image: UIImage(named: "ic_bt_cart_96")?.tint(with: UIColor(hex:"0x5b5b5b")).withRenderingMode(.alwaysOriginal), selectedImage:UIImage(named: "ic_bt_cart_96")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal))
-            uinaviVC5.tabBarItem  = itemCommu
-
-            if UI_USER_INTERFACE_IDIOM() != .pad {
-                uinaviVC1.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-                uinaviVC2.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-                uinaviVC3.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-                uinaviVC4.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-                uinaviVC5.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-            }
-
-            uinaviVC1.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
-            uinaviVC2.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
-            uinaviVC3.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
-            uinaviVC4.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
-            uinaviVC5.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
-            
-            AppConfig.navigation.changeRootControllerTo(viewcontroller: vc,animated: false)
-        }
-        
-        static func ifNotHaveMarkFaviousCategories() {
-            
-            let navigation = AppConfig.navigation.self
-            
-            guard let user = Account.current else {
-                AppConfig.navigation.logOut()
-                return
-            }
-
-            Server.shared.getCategories(user.id, loadCache: false) { result in
-                switch result {
-                case .success(let list):
-                    AppConfig.cached.setCacheCategories(data: list)
-                    let listCategories = list.flatMap{Category.parse(from: $0)}.filter{!$0.name.contains("Others")}
-                    let countFavious = listCategories.filter{$0.isMarked == true}
-                    var showed = false
-//                    if let exist = UserDefaults.standard.value(forKey: "APP::HadShowelcome") as? Bool{
-//                        showed = exist
-//                    }
-                    if countFavious.count < 3 {
-                        let vc = WelcomeController(nibName: "WelcomeController", bundle: Bundle.main)
-                        navigation.changeRootControllerTo(viewcontroller: vc,animated: true)
-                    } else {
-                        navigation.gotoHomeAfterSigninSuccess()
-                    }
-                case .failure(let msg):
-                    print(msg as Any)
-                    navigation.gotoHomeAfterSigninSuccess()
-                }
-                
-            }
-        }
-        
+//        static func logOut() {
+//            
+//            AccountManager.reset {
+//                let vc = AuthenticController(nibName: "AuthenticController", bundle: Bundle.main)
+//                AppConfig.navigation.changeRootControllerTo(viewcontroller: vc,animated: true)
+//            }
+//        }
+//        
+//        static func gotoHomeAfterSigninSuccess() {
+//            
+//            let vc = BaseTabbarController()
+//            let uinaviVC1 = UINavigationController.init(rootViewController: HomeController(nibName: "HomeController", bundle: Bundle.main))
+//            let uinaviVC2 = UINavigationController.init(rootViewController: PrepareLiveController())
+//            let uinaviVC3 = UINavigationController.init(rootViewController: GroupController(nibName: "GroupController", bundle: Bundle.main))
+//            let uinaviVC4 = UINavigationController.init(rootViewController: CalendarController(nibName: "CalendarController", bundle: Bundle.main))
+//            let uinaviVC5 = UINavigationController.init(rootViewController: OrderManagementController(nibName: "OrderManagementController", bundle: Bundle.main))
+//            
+//            vc.setViewControllers([uinaviVC1,uinaviVC4,uinaviVC2,uinaviVC5,uinaviVC3], animated: true)
+//            
+//            let itemHome = UITabBarItem(title: nil, image: UIImage(named: "ic_home_96")?.tint(with: UIColor(hex:"0x5b5b5b")).withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "ic_home_96")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal))
+//            uinaviVC1.tabBarItem  = itemHome
+//
+//            let itemLiveStream = UITabBarItem(title: nil, image: UIImage(named: "ic_live_128")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "ic_live_128")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal))
+//            uinaviVC2.tabBarItem  = itemLiveStream
+//
+//            let itemGroup = UITabBarItem(title: nil, image: UIImage(named: "ic_group_96")?.tint(with: UIColor(hex:"0x5b5b5b")).withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "ic_group_96")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal))
+//            uinaviVC3.tabBarItem  = itemGroup
+//
+//            let itemCalendar = UITabBarItem(title: nil, image: UIImage(named: "ic_bt_schedule")?.tint(with: UIColor(hex:"0x5b5b5b")).withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "ic_bt_schedule_selected")?.withRenderingMode(.alwaysOriginal))
+//            uinaviVC4.tabBarItem  = itemCalendar
+//
+//            let itemCommu = UITabBarItem(title: nil, image: UIImage(named: "ic_bt_cart_96")?.tint(with: UIColor(hex:"0x5b5b5b")).withRenderingMode(.alwaysOriginal), selectedImage:UIImage(named: "ic_bt_cart_96")?.tint(with: UIColor(hex:"0xff0000")).withRenderingMode(.alwaysOriginal))
+//            uinaviVC5.tabBarItem  = itemCommu
+//
+//            if UI_USER_INTERFACE_IDIOM() != .pad {
+//                uinaviVC1.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+//                uinaviVC2.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+//                uinaviVC3.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+//                uinaviVC4.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+//                uinaviVC5.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+//            }
+//
+//            uinaviVC1.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
+//            uinaviVC2.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
+//            uinaviVC3.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
+//            uinaviVC4.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
+//            uinaviVC5.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clear], for: UIControlState())
+//            
+//            AppConfig.navigation.changeRootControllerTo(viewcontroller: vc,animated: false)
+//        }
+//        
         static func changeRootControllerTo(viewcontroller:UIViewController, animated:Bool? = false,_ complete:((Bool)->Void)? = nil) {
             let appdelegate = UIApplication.shared.delegate as! AppDelegate
             

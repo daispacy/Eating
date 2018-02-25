@@ -1,17 +1,17 @@
 //
 //  Constant.swift
-//  BUUP
+//  Eating
 //
 //  Created by Dai Pham on 11/14/17.
-//  Copyright © 2017 Sunrise Software Solutions. All rights reserved.
+//  Copyright © 2018 Eating VIETNAM. All rights reserved.
 //
 
 import Foundation
-
+import UIKit
 ///////////////////////////////////////////////////////
 
 //// api s3corp
-let domain = "http://buup.s3corp.com.vn/api"
+let domain = "http://Eating.s3corp.com.vn/api"
 //// MARK: - Socket server
 let socket_server = "http://14.161.33.35:8080"
 

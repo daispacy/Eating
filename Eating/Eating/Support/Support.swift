@@ -3,7 +3,7 @@
 //  SanTube
 //
 //  Created by Dai Pham on 11/16/17.
-//  Copyright © 2017 Sunrise Software Solutions. All rights reserved.
+//  Copyright © 2018 Eating VIETNAM. All rights reserved.
 //
 
 import Foundation
@@ -62,27 +62,5 @@ class Support: NSObject {
             return  returnValue
         }
         
-    }
-    
-    // MARK: - save order deleted
-    class orderDeleted: Support {
-        static func getOrderDeleted() -> Order? {
-            if(UserDefaults.standard.data(forKey: "App:OrderDeleted") != nil) {
-                if let data = NSKeyedUnarchiver.unarchiveObject(with:UserDefaults.standard.value(forKey: "App:OrderDeleted") as! Data) as? JSON {
-                    return Order.parse(from: data)
-                }
-            }
-            return nil
-        }
-        
-        static func saveOrderDeleted(order:Order? = nil) {
-            guard let order = order else {
-                UserDefaults.standard.set(nil, forKey: "App:OrderDeleted")
-                UserDefaults.standard.synchronize()
-                return
-            }
-            UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject:order.toJSON()), forKey: "App:OrderDeleted")
-            UserDefaults.standard.synchronize()
-        }
     }
 }

@@ -13,7 +13,6 @@
 		D72F10F32042D4F80027A319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D72F10F22042D4F80027A319 /* Assets.xcassets */; };
 		D72F11012042D4F80027A319 /* EatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F11002042D4F80027A319 /* EatingTests.swift */; };
 		D72F110C2042D4F80027A319 /* EatingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F110B2042D4F80027A319 /* EatingUITests.swift */; };
-		D72F11242042D74A0027A319 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F111F2042D74A0027A319 /* UserManager.swift */; };
 		D72F11252042D74A0027A319 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F11202042D74A0027A319 /* ConfigManager.swift */; };
 		D72F11262042D74A0027A319 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F11212042D74A0027A319 /* CoreDataStack.swift */; };
 		D72F11272042D74A0027A319 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F11222042D74A0027A319 /* Server.swift */; };
@@ -22,6 +21,13 @@
 		D72F112D2042D7510027A319 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F112A2042D7500027A319 /* Constant.swift */; };
 		D72F112E2042D7510027A319 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F112B2042D7500027A319 /* Support.swift */; };
 		D72F11302042D75D0027A319 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F112F2042D75D0027A319 /* Extensions.swift */; };
+		D72F11342042D87E0027A319 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F11322042D87E0027A319 /* BaseController.swift */; };
+		D72F11352042D87E0027A319 /* BasePresentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F11332042D87E0027A319 /* BasePresentController.swift */; };
+		D72F11382042D8910027A319 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F11362042D8910027A319 /* HomeController.swift */; };
+		D72F11392042D8910027A319 /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72F11372042D8910027A319 /* HomeController.xib */; };
+		D72F113D2042D8F10027A319 /* RestaurantDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F113B2042D8F10027A319 /* RestaurantDetailController.swift */; };
+		D72F113E2042D8F10027A319 /* RestaurantDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72F113C2042D8F10027A319 /* RestaurantDetailController.xib */; };
+		D72F11402042D94A0027A319 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72F113F2042D94A0027A319 /* CoreData.framework */; };
 		EFC90C2B88B8EEE58DAE910E /* Pods_EatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0A430242BC802F75EAB5F1 /* Pods_EatingTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +66,6 @@
 		D72F11072042D4F80027A319 /* EatingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72F110B2042D4F80027A319 /* EatingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatingUITests.swift; sourceTree = "<group>"; };
 		D72F110D2042D4F80027A319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D72F111F2042D74A0027A319 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		D72F11202042D74A0027A319 /* ConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		D72F11212042D74A0027A319 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D72F11222042D74A0027A319 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
@@ -69,6 +74,13 @@
 		D72F112A2042D7500027A319 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D72F112B2042D7500027A319 /* Support.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		D72F112F2042D75D0027A319 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D72F11322042D87E0027A319 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		D72F11332042D87E0027A319 /* BasePresentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresentController.swift; sourceTree = "<group>"; };
+		D72F11362042D8910027A319 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		D72F11372042D8910027A319 /* HomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
+		D72F113B2042D8F10027A319 /* RestaurantDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailController.swift; sourceTree = "<group>"; };
+		D72F113C2042D8F10027A319 /* RestaurantDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantDetailController.xib; sourceTree = "<group>"; };
+		D72F113F2042D94A0027A319 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F6191E4351B825CC0171A148 /* Pods-EatingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatingTests/Pods-EatingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF7B36BFB14705DD9C7FB737 /* Pods-Eating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eating.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eating/Pods-Eating.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D72F11402042D94A0027A319 /* CoreData.framework in Frameworks */,
 				30BDE71812CA02ECD745C87A /* Pods_Eating.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +183,8 @@
 		D72F11192042D61E0027A319 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				D72F11322042D87E0027A319 /* BaseController.swift */,
+				D72F11332042D87E0027A319 /* BasePresentController.swift */,
 				D72F10EB2042D4F80027A319 /* AppDelegate.swift */,
 				D72F10F22042D4F80027A319 /* Assets.xcassets */,
 				D72F10F72042D4F80027A319 /* Info.plist */,
@@ -188,6 +203,8 @@
 		D72F111B2042D6380027A319 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				D72F113A2042D8D30027A319 /* Restautant */,
+				D72F11312042D8210027A319 /* Home */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -216,14 +233,32 @@
 				D72F11202042D74A0027A319 /* ConfigManager.swift */,
 				D72F11212042D74A0027A319 /* CoreDataStack.swift */,
 				D72F11222042D74A0027A319 /* Server.swift */,
-				D72F111F2042D74A0027A319 /* UserManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D72F11312042D8210027A319 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D72F11362042D8910027A319 /* HomeController.swift */,
+				D72F11372042D8910027A319 /* HomeController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D72F113A2042D8D30027A319 /* Restautant */ = {
+			isa = PBXGroup;
+			children = (
+				D72F113B2042D8F10027A319 /* RestaurantDetailController.swift */,
+				D72F113C2042D8F10027A319 /* RestaurantDetailController.xib */,
+			);
+			path = Restautant;
 			sourceTree = "<group>";
 		};
 		F985F236FCEC23F47DF1504B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D72F113F2042D94A0027A319 /* CoreData.framework */,
 				8232E35408EDFE5128610624 /* Pods_Eating.framework */,
 				6D0A430242BC802F75EAB5F1 /* Pods_EatingTests.framework */,
 				02E39A5108C80303F5BC0AF0 /* Pods_EatingUITests.framework */,
@@ -347,6 +382,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D72F113E2042D8F10027A319 /* RestaurantDetailController.xib in Resources */,
+				D72F11392042D8910027A319 /* HomeController.xib in Resources */,
 				D72F10F32042D4F80027A319 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,14 +562,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D72F11272042D74A0027A319 /* Server.swift in Sources */,
-				D72F11242042D74A0027A319 /* UserManager.swift in Sources */,
+				D72F113D2042D8F10027A319 /* RestaurantDetailController.swift in Sources */,
 				D72F10EC2042D4F80027A319 /* AppDelegate.swift in Sources */,
 				D72F112D2042D7510027A319 /* Constant.swift in Sources */,
 				D72F112C2042D7510027A319 /* AppConfig.swift in Sources */,
 				D72F11302042D75D0027A319 /* Extensions.swift in Sources */,
+				D72F11382042D8910027A319 /* HomeController.swift in Sources */,
 				D72F11252042D74A0027A319 /* ConfigManager.swift in Sources */,
 				D72F11262042D74A0027A319 /* CoreDataStack.swift in Sources */,
 				D72F11282042D74A0027A319 /* AccountManager.swift in Sources */,
+				D72F11342042D87E0027A319 /* BaseController.swift in Sources */,
+				D72F11352042D87E0027A319 /* BasePresentController.swift in Sources */,
 				D72F112E2042D7510027A319 /* Support.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,12 +722,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Eating/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Eating/Base/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eating.com.vn.Eating;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -698,12 +738,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Eating/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Eating/Base/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eating.com.vn.Eating;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

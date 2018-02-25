@@ -1,9 +1,9 @@
 //
 //  UserManager.swift
-//  BUUP
+//  Eating
 //
 //  Created by Dai Pham on 11/14/17.
-//  Copyright © 2017 Sunrise Software Solutions. All rights reserved.
+//  Copyright © 2018 Eating VIETNAM. All rights reserved.
 //
 
 import Foundation
