@@ -22,6 +22,9 @@ class BaseController: UIViewController {
     var btnSearch:UIButton!
     var btnBack:UIButton!
     
+    // MARK: - override
+    func layout() {}
+    
     // MARK: - init
     override func viewDidLoad() {
         super.viewDidLoad()

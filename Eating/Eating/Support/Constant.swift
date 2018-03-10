@@ -152,6 +152,24 @@ var fontSize17:CGFloat{
     }
 }
 
+var fontSize18:CGFloat{
+    get {
+        if UIScreen.main.bounds.size.width <= 320 {
+            return 18 * font_scale
+        }
+        return 18
+    }
+}
+
+var fontSize19:CGFloat{
+    get {
+        if UIScreen.main.bounds.size.width <= 320 {
+            return 19 * font_scale
+        }
+        return 19
+    }
+}
+
 var fontSize15:CGFloat{
     get {
         if UIScreen.main.bounds.size.width <= 320 {

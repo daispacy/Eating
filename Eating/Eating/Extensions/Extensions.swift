@@ -435,6 +435,20 @@ extension UIColor {
             blue: CGFloat(b) / 0xff, alpha: alpha!
         )
     }
+    
+    var imageRepresentation : UIImage {
+        let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        
+        context?.setFillColor(self.cgColor)
+        context?.fill(rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image!
+    }
 }
 
 // MARK: - DATE
@@ -793,6 +807,14 @@ extension UIView {
             objc_setAssociatedObject(self, &CHECKBAG, label, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
+    
+    func roundCorners(corners:UIRectCorner, radius: CGFloat)
+    {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
 }
 
 // MARK: - TEXTVIEW
@@ -966,25 +988,25 @@ extension UINavigationController {
 // MARK: - UITABBARCONTROLLER
 extension UITabBar {
     
-    open override func layoutSubviews() {
-        super.layoutSubviews()
-        removeTopLine()
-        addTopLine(color: UIColor(hex:"0xe6c400"))
-    }
-    
-    func addTopLine(color:UIColor,_ alpha:CGFloat? = 1) {
-
-        self.backgroundColor = UIColor(hex:"0xededed")
-        
-        let mask = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: self.bounds.maxX, height: 1)))
-        mask.tag = 99899
-        self.addSubview(mask)
-        mask.backgroundColor = color.withAlphaComponent(alpha!)
-    }
-    
-    func removeTopLine() {
-        _ = self.subviews.reversed().map{if $0.tag == 99899 || $0.tag == 998100 {$0.removeFromSuperview()}}
-    }
+//    open override func layoutSubviews() {
+//        super.layoutSubviews()
+//        removeTopLine()
+//        addTopLine(color: UIColor(hex:"0xe6c400"))
+//    }
+//    
+//    func addTopLine(color:UIColor,_ alpha:CGFloat? = 1) {
+//
+//        self.backgroundColor = UIColor(hex:"0xededed")
+//        
+//        let mask = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: self.bounds.maxX, height: 1)))
+//        mask.tag = 99899
+//        self.addSubview(mask)
+//        mask.backgroundColor = color.withAlphaComponent(alpha!)
+//    }
+//    
+//    func removeTopLine() {
+//        _ = self.subviews.reversed().map{if $0.tag == 99899 || $0.tag == 998100 {$0.removeFromSuperview()}}
+//    }
 }
 
 // MARK: - NOTIFICATION.NAME
@@ -1112,10 +1134,18 @@ extension AVPlayerLayer {
     }
 }
 
+// MARK: - CGRECT
+extension CGRect {
+    
+    var center: CGPoint {
+        return CGPoint(x: width/2 + minX, y: height/2 + minY)
+    }
+}
+
 // MARK: - Custom transition
 class PushZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    private let duration: TimeInterval = 0.5
+    private let duration: TimeInterval = 0.6
     var operation: UINavigationControllerOperation = .push
     var thumbnailFrame = CGRect.zero
     
@@ -1128,77 +1158,45 @@ class PushZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitionin
         
         // Determine which is the master view and which is the detail view that we're navigating to and from. The container view will house the views for transition animation.
         let containerView = transitionContext.containerView
-        guard let toView = transitionContext.view(forKey: UITransitionContextViewKey.to) else { return }
-        guard let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from) else { return }
-        let storyFeedView = presenting ? fromView : toView
-        let storyDetailView = presenting ? toView : fromView
+        let to = transitionContext.viewController(forKey: .to)!
+        let from = transitionContext.viewController(forKey: .from)!
+        let listView = (presenting ? from.view : to.view)!
+        let detailView = (presenting ? to.view : from.view)!
+        containerView.addSubview(detailView)
+        containerView.addSubview(listView)
         
+        let detailvc = (presenting ? to  : from) as! RestaurantDetailController
+        detailvc.blurView.frame = presenting ? thumbnailFrame : UIScreen.main.bounds
         // Determine the starting frame of the detail view for the animation. When we're presenting, the detail view will grow out of the thumbnail frame. When we're dismissing, the detail view will shrink back into that same thumbnail frame.
-        var initialFrame = presenting ? thumbnailFrame : storyDetailView.frame
-        let finalFrame = presenting ? storyDetailView.frame : thumbnailFrame
-        
-        // Resize the detail view to fit within the thumbnail's frame at the beginning of the push animation and at the end of the pop animation while maintaining it's inherent aspect ratio.
-        let initialFrameAspectRatio = initialFrame.width / initialFrame.height
-        let storyDetailAspectRatio = storyDetailView.frame.width / storyDetailView.frame.height
-        if initialFrameAspectRatio > storyDetailAspectRatio {
-            initialFrame.size = CGSize(width: initialFrame.height * storyDetailAspectRatio, height: initialFrame.height)
-        }
-        else {
-            initialFrame.size = CGSize(width: initialFrame.width, height: initialFrame.width / storyDetailAspectRatio)
-        }
-        
-        let finalFrameAspectRatio = finalFrame.width / finalFrame.height
-        var resizedFinalFrame = finalFrame
-        if finalFrameAspectRatio > storyDetailAspectRatio {
-            resizedFinalFrame.size = CGSize(width: finalFrame.height * storyDetailAspectRatio, height: finalFrame.height)
-        }
-        else {
-            resizedFinalFrame.size = CGSize(width: finalFrame.width, height: finalFrame.width / storyDetailAspectRatio)
-        }
-        
-        // Determine how much the detail view needs to grow or shrink.
-        let scaleFactor = resizedFinalFrame.width / initialFrame.width
-        let growScaleFactor = presenting ? scaleFactor: 1/scaleFactor
-        let shrinkScaleFactor = 1/growScaleFactor
-        
-        if presenting {
-            // Shrink the detail view for the initial frame. The detail view will be scaled to CGAffineTransformIdentity below.
-            storyDetailView.transform = CGAffineTransform(scaleX: shrinkScaleFactor, y: shrinkScaleFactor)
-            storyDetailView.center = CGPoint(x: thumbnailFrame.midX, y: thumbnailFrame.midY)
-            storyDetailView.clipsToBounds = true
-        }
-        
-        // Set the initial state of the alpha for the master and detail views so that we can fade them in and out during the animation.
-        storyDetailView.alpha = presenting ? 0 : 1
-        storyFeedView.alpha = presenting ? 1 : 0
-        
-        // Add the view that we're transitioning to to the container view that houses the animation.
-        containerView.addSubview(toView)
-        containerView.bringSubview(toFront: storyDetailView)
-        
-        // Animate the transition.
-        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
-            // Fade the master and detail views in and out.
-            storyDetailView.alpha = presenting ? 1 : 0
-            storyFeedView.alpha = presenting ? 0 : 1
-            
+        print(detailView.frame)
+        containerView.bringSubview(toFront: detailView)
+        listView.isHidden = !presenting
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: {
             if presenting {
-                // Scale the master view in parallel with the detail view (which will grow to its inherent size). The translation gives the appearance that the anchor point for the zoom is the center of the thumbnail frame.
-                let scale = CGAffineTransform(scaleX: growScaleFactor, y: growScaleFactor)
-                let translate = CGAffineTransform(translationX: storyFeedView.frame.midX - self.thumbnailFrame.midX, y: storyFeedView.frame.midY - self.thumbnailFrame.midY)
-                storyFeedView.transform = translate.concatenating(scale)
-                storyDetailView.transform = .identity
+                detailvc.blurView.frame = UIScreen.main.bounds//translate//.concatenating(scale)
+//                detailView.frame.applying(self.bounceTransform(self.thumbnailFrame, to: detailView.frame))
             }
             else {
-                // Return the master view to its inherent size and position and shrink the detail view.
-                storyFeedView.transform = .identity
-                storyDetailView.transform = CGAffineTransform(scaleX: shrinkScaleFactor, y: shrinkScaleFactor)
+                detailvc.blurView.frame = self.thumbnailFrame
             }
             
-            // Move the detail view to the final frame position.
-            storyDetailView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
-        }) { finished in
-            transitionContext.completeTransition(finished)
+        }) { finised in
+            if !presenting {listView.isHidden = false}
+            transitionContext.completeTransition(finised)
         }
+    }
+    
+    private func bounceTransform(_ from: CGRect, to: CGRect ) -> CGAffineTransform {
+        
+        let old = from.center
+        let new = to.center
+        
+        let xDistance = old.x - new.x
+        let yDistance = old.y - new.y
+        
+        let xMove = -( xDistance * 0.05 )
+        let yMove = -( yDistance * 0.05 )
+        
+        return CGAffineTransform(translationX: xMove, y: yMove)
     }
 }

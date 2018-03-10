@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="RestaurantCard" customModule="Eating" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="142" height="178"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ixa-aC-bea">
+                    <rect key="frame" x="0.0" y="0.0" width="142" height="107"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6l3-yN-xjF">
+                    <rect key="frame" x="0.0" y="0.0" width="142" height="107"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsJ-Nn-AXZ">
+                    <rect key="frame" x="142" y="86.5" width="24" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K4r-Jf-MMe">
+                    <rect key="frame" x="5" y="112" width="142" height="46"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWO-OR-c4O">
+                            <rect key="frame" x="0.0" y="0.0" width="142" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnj-cL-rCH">
+                            <rect key="frame" x="0.0" y="25.5" width="142" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQf-BO-rAV">
+                    <rect key="frame" x="10" y="10" width="142" height="158"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="PQf-BO-rAV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="0XI-Wj-cKO"/>
+                <constraint firstItem="ixa-aC-bea" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7XU-Z0-hlP"/>
+                <constraint firstItem="ixa-aC-bea" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8QH-5e-HDn"/>
+                <constraint firstAttribute="bottom" secondItem="PQf-BO-rAV" secondAttribute="bottom" constant="10" id="ANr-VG-FYP"/>
+                <constraint firstItem="PQf-BO-rAV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="AxP-R5-Uhb"/>
+                <constraint firstItem="K4r-Jf-MMe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="Neo-aS-jEK"/>
+                <constraint firstAttribute="trailing" secondItem="PQf-BO-rAV" secondAttribute="trailing" constant="10" id="OwS-xY-4Mg"/>
+                <constraint firstItem="6l3-yN-xjF" firstAttribute="trailing" secondItem="ixa-aC-bea" secondAttribute="trailing" id="U4j-12-w4b"/>
+                <constraint firstItem="K4r-Jf-MMe" firstAttribute="top" secondItem="ixa-aC-bea" secondAttribute="bottom" constant="5" id="Uxn-2a-a4Z"/>
+                <constraint firstItem="6l3-yN-xjF" firstAttribute="leading" secondItem="ixa-aC-bea" secondAttribute="leading" id="XU7-ol-C79"/>
+                <constraint firstAttribute="trailing" secondItem="K4r-Jf-MMe" secondAttribute="trailing" constant="5" id="YgO-WF-Rq9"/>
+                <constraint firstAttribute="trailing" secondItem="ixa-aC-bea" secondAttribute="trailing" id="a4e-S4-10v"/>
+                <constraint firstItem="ixa-aC-bea" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.6" id="btt-gA-BeY"/>
+                <constraint firstItem="6l3-yN-xjF" firstAttribute="top" secondItem="ixa-aC-bea" secondAttribute="top" id="ikk-j6-3SE"/>
+                <constraint firstItem="nsJ-Nn-AXZ" firstAttribute="trailing" secondItem="ixa-aC-bea" secondAttribute="trailing" id="kbE-rd-xxb"/>
+                <constraint firstItem="6l3-yN-xjF" firstAttribute="bottom" secondItem="ixa-aC-bea" secondAttribute="bottom" id="koF-RQ-2sZ"/>
+                <constraint firstAttribute="bottom" secondItem="K4r-Jf-MMe" secondAttribute="bottom" priority="250" constant="5" id="l9H-2m-ap9"/>
+                <constraint firstItem="nsJ-Nn-AXZ" firstAttribute="bottom" secondItem="ixa-aC-bea" secondAttribute="bottom" id="z76-O9-5rf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="blurView" destination="6l3-yN-xjF" id="r1J-eV-Il5"/>
+                <outlet property="btnAction" destination="PQf-BO-rAV" id="9KI-Gh-MNU"/>
+                <outlet property="imageView" destination="ixa-aC-bea" id="8uH-WC-OgA"/>
+                <outlet property="lblRate" destination="nsJ-Nn-AXZ" id="OSD-Ps-oNd"/>
+                <outlet property="lblSubtitle" destination="hnj-cL-rCH" id="QVn-IG-lga"/>
+                <outlet property="lblTitle" destination="HWO-OR-c4O" id="cTU-re-LnC"/>
+            </connections>
+            <point key="canvasLocation" x="-83" y="-191"/>
+        </view>
+    </objects>
+</document>

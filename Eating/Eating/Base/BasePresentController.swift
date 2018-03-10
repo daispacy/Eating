@@ -8,10 +8,9 @@
 
 import UIKit
 
-class BasePresentController: UIViewController {
+class BasePresentController: BaseController {
 
     // MARK: - closures
-    var onDissmiss:(()->Void)?
     
     // MARK: - init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

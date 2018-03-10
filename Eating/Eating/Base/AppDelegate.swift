@@ -16,11 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = HomeController(nibName: "HomeController", bundle: Bundle.main)
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "home")
+        let tb = UITabBarController()
         let nv = UINavigationController(rootViewController: vc)
+        tb.viewControllers = [nv,RestaurantDetailController(nibName: "RestaurantDetailController", bundle: nil),sb.instantiateViewController(withIdentifier: "profile")]
         if let ww = window {
-            ww.rootViewController = nv
+            ww.rootViewController = tb
             ww.makeKeyAndVisible()
         }
         
