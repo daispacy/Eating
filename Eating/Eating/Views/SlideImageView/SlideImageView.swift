@@ -29,7 +29,7 @@ class SlideImageView: UIView {
         scrollView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
         
         // add stackview
         stackImages = UIStackView(frame: bounds)
@@ -38,7 +38,8 @@ class SlideImageView: UIView {
         stackImages.translatesAutoresizingMaskIntoConstraints = false
         stackImages.topAnchor.constraint(equalTo: stackImages.superview!.topAnchor, constant: 0).isActive = true
         stackImages.leadingAnchor.constraint(equalTo: stackImages.superview!.leadingAnchor, constant: 0).isActive = true
-        stackImages.bottomAnchor.constraint(equalTo: stackImages.superview!.bottomAnchor, constant: 0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: stackImages.bottomAnchor, constant: 0).isActive = true
+        scrollView.heightAnchor.constraint(equalTo: stackImages.heightAnchor, multiplier: 1).isActive = true
         let trSI = stackImages.trailingAnchor.constraint(equalTo: stackImages.superview!.trailingAnchor)
         trSI.priority = 250
         stackImages.superview?.addConstraint(trSI)
@@ -53,6 +54,7 @@ class SlideImageView: UIView {
             stackImages.addArrangedSubview(imageView)
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height*25/100).isActive = true
         }
     }
     

@@ -22,6 +22,15 @@ class RestaurantDetailController: UIViewController {
         rateRestaurantView = Bundle.main.loadNibNamed("RateRestaurantView", owner: self, options: nil)?.first as! RateRestaurantView
         stackContainer.addArrangedSubview(rateRestaurantView)
         
+        // add menu restaurant view
+        menuRestaurant = Bundle.main.loadNibNamed("MenuRestaurantView", owner: self, options: nil)?.first as! MenuRestaurantView
+        stackContainer.addArrangedSubview(menuRestaurant)
+        menuRestaurant.loadFakeImages()
+        
+        // add menu restaurant view
+        imageRestaurant = Bundle.main.loadNibNamed("ImageRestaurantView", owner: self, options: nil)?.first as! ImageRestaurantView
+        stackContainer.addArrangedSubview(imageRestaurant)
+        imageRestaurant.loadFakeImages()
     }
     
     // MARK: - init
@@ -43,6 +52,8 @@ class RestaurantDetailController: UIViewController {
     var blurView: UIVisualEffectView!
     var informationCommonView:InformationCommonRestaurantView! // load name, address, openhours of restaurant
     var rateRestaurantView:RateRestaurantView! // load rate restaurant
+    var menuRestaurant:MenuRestaurantView! // load menus image restaurant
+    var imageRestaurant:ImageRestaurantView! // load photos restaurant
     
     // MARK: - outlet
     @IBOutlet weak var slideImageView: SlideImageView!

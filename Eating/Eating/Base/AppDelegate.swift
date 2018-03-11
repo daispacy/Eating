@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = sb.instantiateViewController(withIdentifier: "home")
         let tb = UITabBarController()
         let nv = UINavigationController(rootViewController: vc)
-        tb.viewControllers = [nv,RestaurantDetailController(nibName: "RestaurantDetailController", bundle: nil),sb.instantiateViewController(withIdentifier: "profile")]
+        tb.viewControllers = [nv,RestaurantDetailController(nibName: "RestaurantDetailController", bundle: nil),sb.instantiateViewController(withIdentifier: "map")]
         if let ww = window {
             ww.rootViewController = tb
             ww.makeKeyAndVisible()

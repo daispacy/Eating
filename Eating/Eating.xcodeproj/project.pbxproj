@@ -36,11 +36,16 @@
 		D748EA682045BAEE00C80F9E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D748EA672045BAEE00C80F9E /* Launch Screen.storyboard */; };
 		D748EA6A2045C1E900C80F9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D748EA692045C1E900C80F9E /* Main.storyboard */; };
 		D748EA702045C5C300C80F9E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D748EA6E2045C5C300C80F9E /* ProfileController.swift */; };
+		D7557C6420556E8200641DEB /* ImageRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7557C6220556E8200641DEB /* ImageRestaurantView.swift */; };
+		D7557C6520556E8200641DEB /* ImageRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7557C6320556E8200641DEB /* ImageRestaurantView.xib */; };
+		D7557C692055816900641DEB /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7557C672055816900641DEB /* MapController.swift */; };
 		D76F89372053D583000B3EFC /* InformationCommonRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F89362053D583000B3EFC /* InformationCommonRestaurantView.swift */; };
 		D76F89392053D598000B3EFC /* InformationCommonRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76F89382053D598000B3EFC /* InformationCommonRestaurantView.xib */; };
 		D76F893B20545052000B3EFC /* RateRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F893A20545052000B3EFC /* RateRestaurantView.swift */; };
 		D76F893D2054505D000B3EFC /* RateRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76F893C2054505D000B3EFC /* RateRestaurantView.xib */; };
 		D77CE6C620470B72004027A9 /* SlideImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CE6C520470B72004027A9 /* SlideImageView.swift */; };
+		D7C66EB5205506D9003C3022 /* MenuRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C66EB4205506D9003C3022 /* MenuRestaurantView.swift */; };
+		D7C66EB7205506E2003C3022 /* MenuRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C66EB6205506E2003C3022 /* MenuRestaurantView.xib */; };
 		EFC90C2B88B8EEE58DAE910E /* Pods_EatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0A430242BC802F75EAB5F1 /* Pods_EatingTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,11 +107,16 @@
 		D748EA672045BAEE00C80F9E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D748EA692045C1E900C80F9E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D748EA6E2045C5C300C80F9E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		D7557C6220556E8200641DEB /* ImageRestaurantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRestaurantView.swift; sourceTree = "<group>"; };
+		D7557C6320556E8200641DEB /* ImageRestaurantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageRestaurantView.xib; sourceTree = "<group>"; };
+		D7557C672055816900641DEB /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		D76F89362053D583000B3EFC /* InformationCommonRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCommonRestaurantView.swift; sourceTree = "<group>"; };
 		D76F89382053D598000B3EFC /* InformationCommonRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationCommonRestaurantView.xib; sourceTree = "<group>"; };
 		D76F893A20545052000B3EFC /* RateRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRestaurantView.swift; sourceTree = "<group>"; };
 		D76F893C2054505D000B3EFC /* RateRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateRestaurantView.xib; sourceTree = "<group>"; };
 		D77CE6C520470B72004027A9 /* SlideImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideImageView.swift; sourceTree = "<group>"; };
+		D7C66EB4205506D9003C3022 /* MenuRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRestaurantView.swift; sourceTree = "<group>"; };
+		D7C66EB6205506E2003C3022 /* MenuRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuRestaurantView.xib; sourceTree = "<group>"; };
 		F6191E4351B825CC0171A148 /* Pods-EatingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatingTests/Pods-EatingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF7B36BFB14705DD9C7FB737 /* Pods-Eating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eating.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eating/Pods-Eating.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +242,7 @@
 		D72F111B2042D6380027A319 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				D7557C662055814500641DEB /* MapController */,
 				D748EA6D2045C59900C80F9E /* Profile */,
 				D72F113A2042D8D30027A319 /* Restautant */,
 				D72F11312042D8210027A319 /* Home */,
@@ -331,13 +342,25 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		D7557C662055814500641DEB /* MapController */ = {
+			isa = PBXGroup;
+			children = (
+				D7557C672055816900641DEB /* MapController.swift */,
+			);
+			path = MapController;
+			sourceTree = "<group>";
+		};
 		D76F89352053D555000B3EFC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D7557C6220556E8200641DEB /* ImageRestaurantView.swift */,
+				D7557C6320556E8200641DEB /* ImageRestaurantView.xib */,
 				D76F89362053D583000B3EFC /* InformationCommonRestaurantView.swift */,
 				D76F89382053D598000B3EFC /* InformationCommonRestaurantView.xib */,
 				D76F893A20545052000B3EFC /* RateRestaurantView.swift */,
 				D76F893C2054505D000B3EFC /* RateRestaurantView.xib */,
+				D7C66EB4205506D9003C3022 /* MenuRestaurantView.swift */,
+				D7C66EB6205506E2003C3022 /* MenuRestaurantView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -477,8 +500,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C66EB7205506E2003C3022 /* MenuRestaurantView.xib in Resources */,
 				D748EA6620459C5C00C80F9E /* RestaurantCellSearch.xib in Resources */,
 				D747FB28204534C4002EFC4F /* BlockListRestaurantCard.xib in Resources */,
+				D7557C6520556E8200641DEB /* ImageRestaurantView.xib in Resources */,
 				D748EA6A2045C1E900C80F9E /* Main.storyboard in Resources */,
 				D747FB212045110F002EFC4F /* RestaurantCard.xib in Resources */,
 				D72F10F32042D4F80027A319 /* Assets.xcassets in Resources */,
@@ -669,6 +694,7 @@
 				D72F10EC2042D4F80027A319 /* AppDelegate.swift in Sources */,
 				D72F112D2042D7510027A319 /* Constant.swift in Sources */,
 				D748EA702045C5C300C80F9E /* ProfileController.swift in Sources */,
+				D7557C6420556E8200641DEB /* ImageRestaurantView.swift in Sources */,
 				D72F112C2042D7510027A319 /* AppConfig.swift in Sources */,
 				D72F11302042D75D0027A319 /* Extensions.swift in Sources */,
 				D747FB1F204510FB002EFC4F /* RestaurantCard.swift in Sources */,
@@ -676,9 +702,11 @@
 				D72F11252042D74A0027A319 /* ConfigManager.swift in Sources */,
 				D748EA6520459C5C00C80F9E /* RestaurantCellSearch.swift in Sources */,
 				D72F11262042D74A0027A319 /* CoreDataStack.swift in Sources */,
+				D7557C692055816900641DEB /* MapController.swift in Sources */,
 				D72F11282042D74A0027A319 /* AccountManager.swift in Sources */,
 				D72F11342042D87E0027A319 /* BaseController.swift in Sources */,
 				D77CE6C620470B72004027A9 /* SlideImageView.swift in Sources */,
+				D7C66EB5205506D9003C3022 /* MenuRestaurantView.swift in Sources */,
 				D72F11352042D87E0027A319 /* BasePresentController.swift in Sources */,
 				D72F112E2042D7510027A319 /* Support.swift in Sources */,
 				D747FB232045140A002EFC4F /* ConstantView.swift in Sources */,

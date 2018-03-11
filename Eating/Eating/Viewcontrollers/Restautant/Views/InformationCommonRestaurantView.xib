@@ -44,26 +44,20 @@
                                 <constraint firstItem="Hxn-dq-Jop" firstAttribute="leading" secondItem="6Q6-uM-eGb" secondAttribute="leading" id="oiQ-JO-gUY"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65/30A Giải phóng, phường 4, tân bình" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnr-2P-FqD">
-                            <rect key="frame" x="0.0" y="60" width="373" height="6"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neK-PO-nbg">
-                            <rect key="frame" x="0.0" y="76" width="373" height="61"/>
+                            <rect key="frame" x="0.0" y="60" width="373" height="77"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JU-f2-MB7" userLabel="time open">
-                                    <rect key="frame" x="0.0" y="0.0" width="181.5" height="30.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="181.5" height="16"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closed • " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fk-Tw-feo">
-                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="30.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="center" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-Sm-bYQ">
-                                            <rect key="frame" x="69.5" y="0.0" width="112" height="30.5"/>
+                                            <rect key="frame" x="69.5" y="0.0" width="112" height="16"/>
                                             <color key="tintColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" title="Open at 11AM">
                                                 <color key="titleColor" red="0.77505667099999997" green="0.77505667099999997" blue="0.77505667099999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,8 +65,14 @@
                                         </button>
                                     </subviews>
                                 </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee, Món Huế" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnr-2P-FqD">
+                                    <rect key="frame" x="0.0" y="26" width="373" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s2s-Wp-GzJ" userLabel="map &amp; reviews &amp; photos">
-                                    <rect key="frame" x="0.0" y="40.5" width="236" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="56.5" width="236" height="20.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tax-HV-Osf">
                                             <rect key="frame" x="0.0" y="0.0" width="33.5" height="20.5"/>
@@ -104,10 +104,13 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="s2s-Wp-GzJ" firstAttribute="leading" secondItem="neK-PO-nbg" secondAttribute="leading" id="7TU-hw-esp"/>
-                                <constraint firstItem="s2s-Wp-GzJ" firstAttribute="top" secondItem="2JU-f2-MB7" secondAttribute="bottom" constant="10" id="YFn-PV-LAa"/>
+                                <constraint firstItem="vnr-2P-FqD" firstAttribute="top" secondItem="2JU-f2-MB7" secondAttribute="bottom" constant="10" id="7oL-Hl-2j9"/>
+                                <constraint firstItem="vnr-2P-FqD" firstAttribute="leading" secondItem="neK-PO-nbg" secondAttribute="leading" id="H3H-3e-SiM"/>
+                                <constraint firstItem="s2s-Wp-GzJ" firstAttribute="top" secondItem="vnr-2P-FqD" secondAttribute="bottom" constant="10" id="ImC-Ob-5Y2"/>
                                 <constraint firstAttribute="bottom" secondItem="s2s-Wp-GzJ" secondAttribute="bottom" id="b42-9A-3fW"/>
                                 <constraint firstItem="2JU-f2-MB7" firstAttribute="top" secondItem="neK-PO-nbg" secondAttribute="top" id="be9-yG-CGF"/>
                                 <constraint firstItem="2JU-f2-MB7" firstAttribute="leading" secondItem="neK-PO-nbg" secondAttribute="leading" id="bpE-qX-xY3"/>
+                                <constraint firstAttribute="trailing" secondItem="vnr-2P-FqD" secondAttribute="trailing" id="hlU-3j-qME"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -133,7 +136,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="btnOpenHours" destination="Fgm-Sm-bYQ" id="k8M-xg-Bvb"/>
-                <outlet property="lblAddress" destination="vnr-2P-FqD" id="5Fq-Uu-9W1"/>
+                <outlet property="lblCuisine" destination="vnr-2P-FqD" id="5Fq-Uu-9W1"/>
                 <outlet property="lblName" destination="Hxn-dq-Jop" id="ZjN-Uf-5YP"/>
                 <outlet property="lblOpenMap" destination="tax-HV-Osf" id="1qi-Hk-0GM"/>
                 <outlet property="lblOpenPhotos" destination="86x-7F-ZbF" id="29g-2h-RPK"/>

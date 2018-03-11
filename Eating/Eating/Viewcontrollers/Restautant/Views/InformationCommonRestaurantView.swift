@@ -25,8 +25,8 @@ class InformationCommonRestaurantView: UIView {
         
         lblRate.backgroundColor = Restaurant_Card_Rate_BG_Colors.chooseOne.values.first as? UIColor
         
-        lblAddress.textColor = #colorLiteral(red: 0.6156862745, green: 0.6156862745, blue: 0.6156862745, alpha: 1)
-        lblAddress.font = UIFont.systemFont(ofSize: fontSize16)
+        lblCuisine.textColor = #colorLiteral(red: 0.6156862745, green: 0.6156862745, blue: 0.6156862745, alpha: 1)
+        lblCuisine.font = UIFont.systemFont(ofSize: fontSize16)
         
         lblStatus.textColor = #colorLiteral(red: 0.8862745098, green: 0.2156862745, blue: 0.2666666667, alpha: 1)
         lblStatus.font = UIFont.systemFont(ofSize: fontSize16)
@@ -65,7 +65,7 @@ class InformationCommonRestaurantView: UIView {
     // MARK: - outlet
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblRate: UILabel!
-    @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var lblCuisine: UILabel!
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var btnOpenHours: UIButton!
     @IBOutlet weak var lblOpenMap: UILabel!

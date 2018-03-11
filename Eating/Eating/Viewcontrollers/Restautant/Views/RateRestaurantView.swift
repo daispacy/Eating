@@ -33,8 +33,7 @@ class RateRestaurantView: UIView {
                             button.backgroundColor = backgroundColor
                             button.setImage(image, for: .selected)
                             button.isSelected = false
-                            self.btnAddReview.isHidden = true
-                            self.lblCongrateRate.isHidden = true
+                            self.setState()
                         }
                     }
                 })
@@ -44,8 +43,7 @@ class RateRestaurantView: UIView {
                 Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: {timer in
                     sender.stopAnimation()
                     sender.isSelected = true
-                    self.btnAddReview.isHidden = false
-                    self.lblCongrateRate.isHidden = false
+                    self.setState()
                 })
             }
         }
@@ -92,6 +90,14 @@ class RateRestaurantView: UIView {
     }
     
     // MARK: - private
+    private func setState() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.btnAddReview.isHidden = !self.btnReset.isSelected
+            self.lblCongrateRate.isHidden =  !self.btnReset.isSelected
+            self.lblTitle.text = !self.btnReset.isSelected ? "Rate this place" : "Your rate!"
+        }, completion: nil)
+    }
+    
     private func config() {
         lblTitle.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         lblTitle.font = UIFont.boldSystemFont(ofSize: fontSize18)
