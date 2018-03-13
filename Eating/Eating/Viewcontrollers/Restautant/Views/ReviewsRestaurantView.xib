@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="ReviewsRestaurantView" customModule="Eating" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30z-4j-iAJ">
+                    <rect key="frame" x="10" y="10" width="355" height="34"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShT-A9-uoG">
+                            <rect key="frame" x="0.0" y="0.0" width="252" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-C0-lZb">
+                            <rect key="frame" x="252" y="0.0" width="103" height="34"/>
+                            <state key="normal" title="Read All (14)">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KVx-XA-KSl">
+                    <rect key="frame" x="10" y="49" width="355" height="52"/>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pf-pS-6Mk" userLabel="Read All 14 reviews">
+                    <rect key="frame" x="10" y="106" width="103" height="34"/>
+                    <state key="normal" title="Read All (14)">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="9Pf-pS-6Mk" secondAttribute="bottom" constant="10" id="5xx-Hd-jdp"/>
+                <constraint firstItem="30z-4j-iAJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Af6-uX-LXe"/>
+                <constraint firstItem="9Pf-pS-6Mk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="J6f-lN-2Ei"/>
+                <constraint firstItem="KVx-XA-KSl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="LOI-h8-ATw"/>
+                <constraint firstItem="30z-4j-iAJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="WJO-gM-ecw"/>
+                <constraint firstAttribute="trailing" secondItem="30z-4j-iAJ" secondAttribute="trailing" constant="10" id="fSd-wl-jrK"/>
+                <constraint firstItem="9Pf-pS-6Mk" firstAttribute="top" secondItem="KVx-XA-KSl" secondAttribute="bottom" constant="5" id="iwV-kl-PzM"/>
+                <constraint firstAttribute="trailing" secondItem="KVx-XA-KSl" secondAttribute="trailing" constant="10" id="kin-NY-xsP"/>
+                <constraint firstItem="KVx-XA-KSl" firstAttribute="top" secondItem="30z-4j-iAJ" secondAttribute="bottom" constant="5" id="n7z-uR-F2V"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnReadAllOne" destination="sfX-C0-lZb" id="gdg-bN-8Pd"/>
+                <outlet property="btnReadAllTwo" destination="9Pf-pS-6Mk" id="G2N-B0-RTB"/>
+                <outlet property="lblTitle" destination="ShT-A9-uoG" id="fHL-bY-hX6"/>
+                <outlet property="stackReviews" destination="KVx-XA-KSl" id="bkl-jv-iFH"/>
+            </connections>
+            <point key="canvasLocation" x="37.5" y="-109"/>
+        </view>
+    </objects>
+</document>

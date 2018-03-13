@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="BlockNameRestaurantView" customModule="Eating" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="beD-Or-4zp">
+                    <rect key="frame" x="0.0" y="10" width="40" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="750" constant="40" id="IzO-C1-gYh"/>
+                        <constraint firstAttribute="width" constant="40" id="zvg-Xw-o1a"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jpt-Hq-VWc">
+                    <rect key="frame" x="50" y="24.5" width="282" height="46"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82k-KH-AhX">
+                            <rect key="frame" x="0.0" y="0.0" width="282" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEJ-Nr-Nhj">
+                            <rect key="frame" x="0.0" y="25.5" width="282" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text=" 4.7 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfg-1y-hBE">
+                    <rect key="frame" x="342" y="37.5" width="33" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="beD-Or-4zp" secondAttribute="bottom" constant="10" id="1Bu-gF-haL"/>
+                <constraint firstItem="beD-Or-4zp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Eho-8z-gXw"/>
+                <constraint firstItem="jpt-Hq-VWc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Kzl-GP-hBS"/>
+                <constraint firstItem="wfg-1y-hBE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OIP-7V-2Zk"/>
+                <constraint firstItem="jpt-Hq-VWc" firstAttribute="leading" secondItem="beD-Or-4zp" secondAttribute="trailing" constant="10" id="Z85-AI-zfV"/>
+                <constraint firstItem="wfg-1y-hBE" firstAttribute="leading" secondItem="jpt-Hq-VWc" secondAttribute="trailing" constant="10" id="aCA-TY-cET"/>
+                <constraint firstAttribute="trailing" secondItem="wfg-1y-hBE" secondAttribute="trailing" id="fhA-O6-2Gs"/>
+                <constraint firstItem="beD-Or-4zp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="zyf-eJ-VOL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="icon" destination="beD-Or-4zp" id="dQJ-Cl-KpY"/>
+                <outlet property="lblRate" destination="wfg-1y-hBE" id="MuP-wu-Fhi"/>
+                <outlet property="lblSubtitle" destination="bEJ-Nr-Nhj" id="IoS-Qm-3oS"/>
+                <outlet property="lblTitle" destination="82k-KH-AhX" id="28W-kL-E3E"/>
+            </connections>
+            <point key="canvasLocation" x="26.5" y="61.5"/>
+        </view>
+    </objects>
+</document>

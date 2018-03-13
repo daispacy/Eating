@@ -369,6 +369,21 @@ public extension UIImage {
         return newImage!
     }
     
+    func maskRoundedImage(radius: CGFloat) -> UIImage {
+        let width = min(self.size.width,self.size.height)
+        let imageView: UIImageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: width)))
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = self
+        let layer = imageView.layer
+        layer.masksToBounds = true
+        layer.cornerRadius = self.size.width/2
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size,false, UIScreen.main.scale)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return roundedImage!
+    }
+    
     func tint(with color: UIColor) -> UIImage {
         var image = withRenderingMode(.alwaysTemplate)
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
@@ -806,6 +821,17 @@ extension UIView {
             label.setNeedsDisplay()
             objc_setAssociatedObject(self, &CHECKBAG, label, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
+    }
+    
+    func dropShadow(offsetX: CGFloat, offsetY: CGFloat, color: UIColor, opacity: Float, radius: CGFloat, scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowOffset = CGSize(width: offsetX, height: offsetY)
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowRadius = radius
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
     
     func roundCorners(corners:UIRectCorner, radius: CGFloat)
