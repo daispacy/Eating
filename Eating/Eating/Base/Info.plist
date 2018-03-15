@@ -62,8 +62,8 @@
 		</dict>
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(PRODUCT_NAME)  need Usage Photo Description</string>
+	<string>$(PRODUCT_NAME)  need Usage Photo</string>
 	<key>UIRequiresFullScreen</key>
-	<false/>
+	<true/>
 </dict>
 </plist>

@@ -8,6 +8,15 @@
 
 import UIKit
 
+enum RateRestaurantType {
+    case lite
+    case full
+}
+
+protocol RateRestaurantViewDelegate {
+    func rateRestaurant(assign view:RateRestaurantView)
+}
+
 class RateRestaurantView: UIView {
 
     // MARK: - api
@@ -22,6 +31,7 @@ class RateRestaurantView: UIView {
                 Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: {timer in
                     sender.stopAnimation()
                     sender.isSelected = false
+                    self.star = 0
                     for button in self.stackRates.arrangedSubviews {
                         if let button = button as? UIButton {
                             let borderColor = #colorLiteral(red: 0.6156862745, green: 0.6156862745, blue: 0.6156862745, alpha: 1).cgColor
@@ -46,11 +56,19 @@ class RateRestaurantView: UIView {
                     self.setState()
                 })
             }
+        } else if sender.isEqual(btnAddReview) {
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "writeReview") as! WriteReviewController
+            vc.rateRestaurantView = self
+            controller?.navigationController?.present(vc, animated: true, completion: nil)
+            vc.onDissmiss = {[weak self] in
+                guard let _self = self else {return}
+                _self.delegate?.rateRestaurant(assign: _self)
+            }
         }
     }
     
     func touchRate(_ sender:UIButton) {
-        let star = sender.tag
+        star = sender.tag
         var shouldSave = false
         for (i,button) in stackRates.arrangedSubviews.enumerated() {
             if let button = button as? UIButton {
@@ -91,6 +109,7 @@ class RateRestaurantView: UIView {
     
     // MARK: - private
     private func setState() {
+        if type == .lite {return}
         UIView.animate(withDuration: 0.1, animations: {
             self.btnAddReview.isHidden = !self.btnReset.isSelected
             self.lblCongrateRate.isHidden =  !self.btnReset.isSelected
@@ -142,6 +161,20 @@ class RateRestaurantView: UIView {
         btnReset.addTarget(self, action: #selector(touchButton(_:)), for: .touchUpInside)
     }
     
+    private func changeType() {
+        lblTitle.isHidden = type == .lite
+        leadingConstrant.constant = type == .lite ? 0 : 10
+        trailingConstrant.constant = type == .lite ? 0 : 10
+        
+        if type == .lite {
+            btnAddReview.isHidden = true
+            lblCongrateRate.isHidden = true
+        } else {
+            btnAddReview.isHidden = star == 0
+            lblCongrateRate.isHidden = star == 0
+        }
+    }
+    
     // MARK: - init
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -152,6 +185,14 @@ class RateRestaurantView: UIView {
     // MARK: - closures
     
     // MARK: - properties
+    var star:Int = 0
+    var delegate:RateRestaurantViewDelegate?
+    var controller:UIViewController?
+    var type:RateRestaurantType = .full {
+        didSet {
+            changeType()
+        }
+    }
     
     // MARK: - outlet
     @IBOutlet weak var lblTitle: UILabel!
@@ -160,4 +201,7 @@ class RateRestaurantView: UIView {
     @IBOutlet weak var lblCongrateRate: UILabel!
     @IBOutlet weak var btnAddReview: UIButton!
     
+    // MARK: - Constraint
+    @IBOutlet weak var trailingConstrant: NSLayoutConstraint!
+    @IBOutlet weak var leadingConstrant: NSLayoutConstraint!
 }

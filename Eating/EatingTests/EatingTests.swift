@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Photos
 @testable import Eating
 
 class EatingTests: XCTestCase {
@@ -22,8 +23,30 @@ class EatingTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let promise = expectation(description: "test")
+        PHPhotoLibrary.requestAuthorization { (status) in
+            switch status
+            {
+            case .authorized:
+                let fetchOptions = PHFetchOptions()
+                let allPhotos = PHAsset.fetchAssets(with: fetchOptions)
+                allPhotos.enumerateObjects({ (asset, idx, _) in
+                    asset.getURL(completionHandler: { (url) in
+                        print(url?.absoluteString ?? "unkown")
+                        if idx == allPhotos.count - 1 {
+                            promise.fulfill()
+                        }
+                    })
+                })
+            case .denied, .restricted:
+                print("Not allowed")
+            case .notDetermined:
+                print("Not determined yet")
+            }
+        }
+        
+        waitForExpectations(timeout: 30, handler: nil)
+        XCTAssert(true)
     }
     
     func testPerformanceExample() {

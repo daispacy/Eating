@@ -20,6 +20,8 @@ class RestaurantDetailController: UIViewController {
         
         // add rate restaurant view
         rateRestaurantView = Bundle.main.loadNibNamed("RateRestaurantView", owner: self, options: nil)?.first as! RateRestaurantView
+        rateRestaurantView.controller = self
+        rateRestaurantView.delegate = self
         stackContainer.addArrangedSubview(rateRestaurantView)
         
         // add menu restaurant view
@@ -48,10 +50,17 @@ class RestaurantDetailController: UIViewController {
     // MARK: - init
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tabBarController?.tabBar.isHidden = true
         
         slideImageView.load()
         
         config()
+    }
+    
+    deinit {
+        print(NSStringFromClass(RestaurantDetailController.self) + " dealloc")
+        tabBarController?.tabBar.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,4 +83,14 @@ class RestaurantDetailController: UIViewController {
     @IBOutlet weak var slideImageView: SlideImageView!
     @IBOutlet weak var stackContainer: UIStackView!
     
+}
+
+extension RestaurantDetailController:RateRestaurantViewDelegate {
+    func rateRestaurant(assign view: RateRestaurantView) {
+        rateRestaurantView = view
+        rateRestaurantView.type = .full
+        rateRestaurantView.controller = self
+        rateRestaurantView.delegate = self
+        stackContainer.insertArrangedSubview(rateRestaurantView, at: 2)
+    }
 }

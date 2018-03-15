@@ -121,7 +121,9 @@
                 <outlet property="btnReset" destination="kun-PZ-d5v" id="Psj-Fa-fi1"/>
                 <outlet property="lblCongrateRate" destination="Ymn-k4-SEv" id="Lkw-SY-woP"/>
                 <outlet property="lblTitle" destination="nl5-ff-Xnc" id="mw5-5h-ZIi"/>
+                <outlet property="leadingConstrant" destination="bX8-Ix-jC1" id="hia-G8-A9t"/>
                 <outlet property="stackRates" destination="vxM-98-jdb" id="Bck-JO-kAZ"/>
+                <outlet property="trailingConstrant" destination="dhx-L4-x6m" id="i7b-5u-bdC"/>
             </connections>
             <point key="canvasLocation" x="1" y="-230.5"/>
         </view>

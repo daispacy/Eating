@@ -15,6 +15,7 @@ class BlockListImageSquardView: UIView {
 
     // MARK: - api
     func loadFakeImages() {
+        
         self.layoutIfNeeded()
         self.setNeedsDisplay()
         for i in 0..<7 {

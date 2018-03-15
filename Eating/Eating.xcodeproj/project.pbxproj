@@ -48,6 +48,15 @@
 		D748EA682045BAEE00C80F9E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D748EA672045BAEE00C80F9E /* Launch Screen.storyboard */; };
 		D748EA6A2045C1E900C80F9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D748EA692045C1E900C80F9E /* Main.storyboard */; };
 		D748EA702045C5C300C80F9E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D748EA6E2045C5C300C80F9E /* ProfileController.swift */; };
+		D74B3D11205AB854008B8E72 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74B3D10205AB854008B8E72 /* Photos.framework */; };
+		D74B3D14205AB976008B8E72 /* PhotosLibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B3D13205AB976008B8E72 /* PhotosLibraryController.swift */; };
+		D74B3D17205ADF0F008B8E72 /* AddPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B3D16205ADF0F008B8E72 /* AddPhotosView.swift */; };
+		D74B3D19205ADF24008B8E72 /* AddPhotosView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74B3D18205ADF24008B8E72 /* AddPhotosView.xib */; };
+		D753737A2058D5DA00FA7772 /* WriteReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75373792058D5DA00FA7772 /* WriteReviewController.swift */; };
+		D753737D2058D65F00FA7772 /* HeaderRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753737C2058D65F00FA7772 /* HeaderRestaurantView.swift */; };
+		D753737F2058D66800FA7772 /* HeaderRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D753737E2058D66800FA7772 /* HeaderRestaurantView.xib */; };
+		D75373822058D93200FA7772 /* HeaderPresentControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75373812058D93200FA7772 /* HeaderPresentControllerView.swift */; };
+		D75373842058D93A00FA7772 /* HeaderPresentControllerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75373832058D93A00FA7772 /* HeaderPresentControllerView.xib */; };
 		D7557C6420556E8200641DEB /* ImageRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7557C6220556E8200641DEB /* ImageRestaurantView.swift */; };
 		D7557C6520556E8200641DEB /* ImageRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7557C6320556E8200641DEB /* ImageRestaurantView.xib */; };
 		D7557C692055816900641DEB /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7557C672055816900641DEB /* MapController.swift */; };
@@ -131,6 +140,15 @@
 		D748EA672045BAEE00C80F9E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D748EA692045C1E900C80F9E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D748EA6E2045C5C300C80F9E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		D74B3D10205AB854008B8E72 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		D74B3D13205AB976008B8E72 /* PhotosLibraryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosLibraryController.swift; sourceTree = "<group>"; };
+		D74B3D16205ADF0F008B8E72 /* AddPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotosView.swift; sourceTree = "<group>"; };
+		D74B3D18205ADF24008B8E72 /* AddPhotosView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPhotosView.xib; sourceTree = "<group>"; };
+		D75373792058D5DA00FA7772 /* WriteReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewController.swift; sourceTree = "<group>"; };
+		D753737C2058D65F00FA7772 /* HeaderRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRestaurantView.swift; sourceTree = "<group>"; };
+		D753737E2058D66800FA7772 /* HeaderRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderRestaurantView.xib; sourceTree = "<group>"; };
+		D75373812058D93200FA7772 /* HeaderPresentControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPresentControllerView.swift; sourceTree = "<group>"; };
+		D75373832058D93A00FA7772 /* HeaderPresentControllerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderPresentControllerView.xib; sourceTree = "<group>"; };
 		D7557C6220556E8200641DEB /* ImageRestaurantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRestaurantView.swift; sourceTree = "<group>"; };
 		D7557C6320556E8200641DEB /* ImageRestaurantView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageRestaurantView.xib; sourceTree = "<group>"; };
 		D7557C672055816900641DEB /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
@@ -150,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74B3D11205AB854008B8E72 /* Photos.framework in Frameworks */,
 				D72F11402042D94A0027A319 /* CoreData.framework in Frameworks */,
 				30BDE71812CA02ECD745C87A /* Pods_Eating.framework in Frameworks */,
 			);
@@ -266,6 +285,8 @@
 		D72F111B2042D6380027A319 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				D74B3D12205AB950008B8E72 /* PhotosLibraryController */,
+				D75373782058D5A700FA7772 /* WriteReviewController */,
 				D7557C662055814500641DEB /* MapController */,
 				D748EA6D2045C59900C80F9E /* Profile */,
 				D72F113A2042D8D30027A319 /* Restautant */,
@@ -350,6 +371,9 @@
 		D747FB1C204510CC002EFC4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D74B3D15205ADEF6008B8E72 /* AddPhotosView */,
+				D75373802058D90F00FA7772 /* HeaderPresentControllerView */,
+				D753737B2058D62B00FA7772 /* HeaderRestaurantView */,
 				D744B6BC20582799008AEE83 /* BlockNameRestaurantView */,
 				D744B6B72058178F008AEE83 /* BlockListImageSquardView */,
 				D744B6B2205812A4008AEE83 /* BlockReviewView */,
@@ -396,6 +420,49 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		D74B3D12205AB950008B8E72 /* PhotosLibraryController */ = {
+			isa = PBXGroup;
+			children = (
+				D74B3D13205AB976008B8E72 /* PhotosLibraryController.swift */,
+			);
+			path = PhotosLibraryController;
+			sourceTree = "<group>";
+		};
+		D74B3D15205ADEF6008B8E72 /* AddPhotosView */ = {
+			isa = PBXGroup;
+			children = (
+				D74B3D16205ADF0F008B8E72 /* AddPhotosView.swift */,
+				D74B3D18205ADF24008B8E72 /* AddPhotosView.xib */,
+			);
+			path = AddPhotosView;
+			sourceTree = "<group>";
+		};
+		D75373782058D5A700FA7772 /* WriteReviewController */ = {
+			isa = PBXGroup;
+			children = (
+				D75373792058D5DA00FA7772 /* WriteReviewController.swift */,
+			);
+			path = WriteReviewController;
+			sourceTree = "<group>";
+		};
+		D753737B2058D62B00FA7772 /* HeaderRestaurantView */ = {
+			isa = PBXGroup;
+			children = (
+				D753737C2058D65F00FA7772 /* HeaderRestaurantView.swift */,
+				D753737E2058D66800FA7772 /* HeaderRestaurantView.xib */,
+			);
+			path = HeaderRestaurantView;
+			sourceTree = "<group>";
+		};
+		D75373802058D90F00FA7772 /* HeaderPresentControllerView */ = {
+			isa = PBXGroup;
+			children = (
+				D75373812058D93200FA7772 /* HeaderPresentControllerView.swift */,
+				D75373832058D93A00FA7772 /* HeaderPresentControllerView.xib */,
+			);
+			path = HeaderPresentControllerView;
+			sourceTree = "<group>";
+		};
 		D7557C662055814500641DEB /* MapController */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +503,7 @@
 		F985F236FCEC23F47DF1504B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D74B3D10205AB854008B8E72 /* Photos.framework */,
 				D72F113F2042D94A0027A319 /* CoreData.framework */,
 				8232E35408EDFE5128610624 /* Pods_Eating.framework */,
 				6D0A430242BC802F75EAB5F1 /* Pods_EatingTests.framework */,
@@ -561,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7C66EB7205506E2003C3022 /* MenuRestaurantView.xib in Resources */,
+				D74B3D19205ADF24008B8E72 /* AddPhotosView.xib in Resources */,
 				D748EA6620459C5C00C80F9E /* RestaurantCellSearch.xib in Resources */,
 				D744B6C520582A66008AEE83 /* OtherRestaurantsView.xib in Resources */,
 				D747FB28204534C4002EFC4F /* BlockListRestaurantCard.xib in Resources */,
@@ -571,7 +640,9 @@
 				D72F10F32042D4F80027A319 /* Assets.xcassets in Resources */,
 				D744B6C1205827D2008AEE83 /* BlockNameRestaurantView.xib in Resources */,
 				D748EA682045BAEE00C80F9E /* Launch Screen.storyboard in Resources */,
+				D75373842058D93A00FA7772 /* HeaderPresentControllerView.xib in Resources */,
 				D76F89392053D598000B3EFC /* InformationCommonRestaurantView.xib in Resources */,
+				D753737F2058D66800FA7772 /* HeaderRestaurantView.xib in Resources */,
 				D744B6BB205817C7008AEE83 /* BlockListImageSquardView.xib in Resources */,
 				D76F893D2054505D000B3EFC /* RateRestaurantView.xib in Resources */,
 				D744B6B6205812EE008AEE83 /* BlockReviewView.xib in Resources */,
@@ -752,8 +823,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D75373822058D93200FA7772 /* HeaderPresentControllerView.swift in Sources */,
 				D72F11272042D74A0027A319 /* Server.swift in Sources */,
 				D72F113D2042D8F10027A319 /* RestaurantDetailController.swift in Sources */,
+				D753737D2058D65F00FA7772 /* HeaderRestaurantView.swift in Sources */,
 				D744B6BE205827C3008AEE83 /* BlockNameRestaurantView.swift in Sources */,
 				D744B6B9205817BF008AEE83 /* BlockListImageSquardView.swift in Sources */,
 				D747FB262045349A002EFC4F /* BlockListRestaurantCard.swift in Sources */,
@@ -766,6 +839,7 @@
 				D72F112C2042D7510027A319 /* AppConfig.swift in Sources */,
 				D72F11302042D75D0027A319 /* Extensions.swift in Sources */,
 				D747FB1F204510FB002EFC4F /* RestaurantCard.swift in Sources */,
+				D753737A2058D5DA00FA7772 /* WriteReviewController.swift in Sources */,
 				D744B6C320582A5F008AEE83 /* OtherRestaurantsView.swift in Sources */,
 				D72F11382042D8910027A319 /* HomeController.swift in Sources */,
 				D72F11252042D74A0027A319 /* ConfigManager.swift in Sources */,
@@ -773,6 +847,8 @@
 				D72F11262042D74A0027A319 /* CoreDataStack.swift in Sources */,
 				D7557C692055816900641DEB /* MapController.swift in Sources */,
 				D72F11282042D74A0027A319 /* AccountManager.swift in Sources */,
+				D74B3D17205ADF0F008B8E72 /* AddPhotosView.swift in Sources */,
+				D74B3D14205AB976008B8E72 /* PhotosLibraryController.swift in Sources */,
 				D744B6B4205812E1008AEE83 /* BlockReviewView.swift in Sources */,
 				D72F11342042D87E0027A319 /* BaseController.swift in Sources */,
 				D77CE6C620470B72004027A9 /* SlideImageView.swift in Sources */,
@@ -965,11 +1041,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZR6QDY93JK;
 				INFOPLIST_FILE = EatingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eating.com.vn.EatingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR) $(inherited)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eating.app/Eating";
 			};
@@ -982,11 +1061,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZR6QDY93JK;
 				INFOPLIST_FILE = EatingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eating.com.vn.EatingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR) $(inherited)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eating.app/Eating";
 			};
