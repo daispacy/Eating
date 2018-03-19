@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantDetailController: UIViewController {
+class RestaurantDetailController: BaseController {
 
     // MARK: - api
     
@@ -28,22 +28,25 @@ class RestaurantDetailController: UIViewController {
         menuRestaurant = Bundle.main.loadNibNamed("MenuRestaurantView", owner: self, options: nil)?.first as! MenuRestaurantView
         stackContainer.addArrangedSubview(menuRestaurant)
         menuRestaurant.loadFakeImages()
-        
+
         // add menu restaurant view
         imageRestaurant = Bundle.main.loadNibNamed("ImageRestaurantView", owner: self, options: nil)?.first as! ImageRestaurantView
         stackContainer.addArrangedSubview(imageRestaurant)
         imageRestaurant.loadFakeImages()
-        
+
         // add details restaurant view
         detailsRestaurant = Bundle.main.loadNibNamed("DetailsRestaurantView", owner: self, options: nil)?.first as! DetailsRestaurantView
         stackContainer.addArrangedSubview(detailsRestaurant)
-        
+
         // add reviews restaurant view
         reviewsRestaurant = Bundle.main.loadNibNamed("ReviewsRestaurantView", owner: self, options: nil)?.first as! ReviewsRestaurantView
+        reviewsRestaurant.controller = self
         stackContainer.addArrangedSubview(reviewsRestaurant)
-        
-        // add reviews restaurant view
-        otherRestaurant = Bundle.main.loadNibNamed("OtherRestaurantsView", owner: self, options: nil)?.first as! OtherRestaurantsView
+
+        // add restaurant view
+        otherRestaurant = OtherRestaurantsView(frame:view.bounds)
+        otherRestaurant.controller = self
+        otherRestaurant.delegate = self
         stackContainer.addArrangedSubview(otherRestaurant)
     }
     
@@ -85,6 +88,7 @@ class RestaurantDetailController: UIViewController {
     
 }
 
+// MARK: -
 extension RestaurantDetailController:RateRestaurantViewDelegate {
     func rateRestaurant(assign view: RateRestaurantView) {
         rateRestaurantView = view
@@ -92,5 +96,16 @@ extension RestaurantDetailController:RateRestaurantViewDelegate {
         rateRestaurantView.controller = self
         rateRestaurantView.delegate = self
         stackContainer.insertArrangedSubview(rateRestaurantView, at: 2)
+    }
+}
+
+// MARK: -
+extension RestaurantDetailController:OtherRestaurantsViewDelegate {
+    func otherRestaurantsView(assign view: OtherRestaurantsView) {
+        otherRestaurant = view
+        otherRestaurant.type = .lite
+        otherRestaurant.controller = self
+        otherRestaurant.delegate = self
+        stackContainer.addArrangedSubview(rateRestaurantView)
     }
 }

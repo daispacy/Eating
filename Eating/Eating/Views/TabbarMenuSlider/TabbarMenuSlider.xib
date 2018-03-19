@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabbarMenuSlider" customModule="Eating" customModuleProvider="target">
+            <connections>
+                <outlet property="constraintLeadingHighlight" destination="hOQ-PW-1gG" id="AG2-KK-o84"/>
+                <outlet property="constraintWidthHighlight" destination="egX-57-EVm" id="acx-C4-lbk"/>
+                <outlet property="scrollView" destination="MdC-fj-oNl" id="ReR-PO-fZH"/>
+                <outlet property="stackControls" destination="xhc-s8-bx9" id="qSJ-kR-BcU"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Lcn-Ej-IGi"/>
+                <outlet property="vwHightLight" destination="iUk-O4-WuF" id="dJw-lw-J1b"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdC-fj-oNl">
+                    <rect key="frame" x="0.0" y="10" width="375" height="30"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xhc-s8-bx9" userLabel="stackTab">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="LM7-hc-inp"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUk-O4-WuF">
+                            <rect key="frame" x="0.0" y="28" width="1" height="2"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="4q7-kv-oZn"/>
+                                <constraint firstAttribute="width" constant="1" id="egX-57-EVm"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="xhc-s8-bx9" secondAttribute="trailing" priority="250" id="5yb-xq-DVk"/>
+                        <constraint firstAttribute="bottom" secondItem="xhc-s8-bx9" secondAttribute="bottom" id="FEB-su-dmy"/>
+                        <constraint firstItem="xhc-s8-bx9" firstAttribute="leading" secondItem="MdC-fj-oNl" secondAttribute="leading" id="Gbm-B3-5nR"/>
+                        <constraint firstAttribute="height" secondItem="xhc-s8-bx9" secondAttribute="height" id="Smv-L1-qL6"/>
+                        <constraint firstItem="iUk-O4-WuF" firstAttribute="leading" secondItem="MdC-fj-oNl" secondAttribute="leading" id="hOQ-PW-1gG"/>
+                        <constraint firstAttribute="bottom" secondItem="iUk-O4-WuF" secondAttribute="bottom" id="tp3-QE-05w"/>
+                        <constraint firstItem="xhc-s8-bx9" firstAttribute="top" secondItem="MdC-fj-oNl" secondAttribute="top" id="yvd-PG-rbo"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="MdC-fj-oNl" secondAttribute="trailing" id="Fu7-c7-CfC"/>
+                <constraint firstItem="MdC-fj-oNl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Lpl-Rg-pes"/>
+                <constraint firstItem="xhc-s8-bx9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" priority="1" id="O8q-iV-EWH"/>
+                <constraint firstAttribute="bottom" secondItem="MdC-fj-oNl" secondAttribute="bottom" constant="10" id="guc-16-Alh"/>
+                <constraint firstItem="MdC-fj-oNl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tcX-sU-Yse"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="83.5" y="-132"/>
+        </view>
+    </objects>
+</document>

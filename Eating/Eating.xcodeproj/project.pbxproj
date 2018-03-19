@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		30BDE71812CA02ECD745C87A /* Pods_Eating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8232E35408EDFE5128610624 /* Pods_Eating.framework */; };
 		3E73B5733025CC609B734719 /* Pods_EatingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E39A5108C80303F5BC0AF0 /* Pods_EatingUITests.framework */; };
+		D727E111206003C800561AF9 /* RecentViewedRestaurantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D727E10F206003C800561AF9 /* RecentViewedRestaurantListController.swift */; };
+		D727E112206003C800561AF9 /* RecentViewedRestaurantListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D727E110206003C800561AF9 /* RecentViewedRestaurantListController.xib */; };
 		D72F10EC2042D4F80027A319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F10EB2042D4F80027A319 /* AppDelegate.swift */; };
 		D72F10F32042D4F80027A319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D72F10F22042D4F80027A319 /* Assets.xcassets */; };
 		D72F11012042D4F80027A319 /* EatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F11002042D4F80027A319 /* EatingTests.swift */; };
@@ -65,6 +67,14 @@
 		D76F893B20545052000B3EFC /* RateRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F893A20545052000B3EFC /* RateRestaurantView.swift */; };
 		D76F893D2054505D000B3EFC /* RateRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76F893C2054505D000B3EFC /* RateRestaurantView.xib */; };
 		D77CE6C620470B72004027A9 /* SlideImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CE6C520470B72004027A9 /* SlideImageView.swift */; };
+		D782BEDB205F649500EF77EC /* TabbarMenuSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782BEDA205F649500EF77EC /* TabbarMenuSlider.swift */; };
+		D782BEDD205F650100EF77EC /* TabbarMenuSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = D782BEDC205F650100EF77EC /* TabbarMenuSlider.xib */; };
+		D782BEE0205F715000EF77EC /* ReviewsManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782BEDF205F715000EF77EC /* ReviewsManagerController.swift */; };
+		D782BEE3205F7AE200EF77EC /* ReviewsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782BEE1205F7AE200EF77EC /* ReviewsListController.swift */; };
+		D782BEE8205F941F00EF77EC /* ReviewsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782BEE6205F941F00EF77EC /* ReviewsListCell.swift */; };
+		D782BEE9205F941F00EF77EC /* ReviewsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D782BEE7205F941F00EF77EC /* ReviewsListCell.xib */; };
+		D7959E72205C28EE009EC609 /* PhotoLibraryCollectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7959E70205C28EE009EC609 /* PhotoLibraryCollectCell.swift */; };
+		D7959E73205C28EE009EC609 /* PhotoLibraryCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7959E71205C28EE009EC609 /* PhotoLibraryCollectCell.xib */; };
 		D7C66EB5205506D9003C3022 /* MenuRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C66EB4205506D9003C3022 /* MenuRestaurantView.swift */; };
 		D7C66EB7205506E2003C3022 /* MenuRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C66EB6205506E2003C3022 /* MenuRestaurantView.xib */; };
 		EFC90C2B88B8EEE58DAE910E /* Pods_EatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0A430242BC802F75EAB5F1 /* Pods_EatingTests.framework */; };
@@ -95,6 +105,8 @@
 		7F447D17668A2F28198EB43F /* Pods-EatingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatingUITests/Pods-EatingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8232E35408EDFE5128610624 /* Pods_Eating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD8B2C3961C10CDE0516763 /* Pods-Eating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eating.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eating/Pods-Eating.release.xcconfig"; sourceTree = "<group>"; };
+		D727E10F206003C800561AF9 /* RecentViewedRestaurantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewedRestaurantListController.swift; sourceTree = "<group>"; };
+		D727E110206003C800561AF9 /* RecentViewedRestaurantListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentViewedRestaurantListController.xib; sourceTree = "<group>"; };
 		D72F10E82042D4F80027A319 /* Eating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72F10EB2042D4F80027A319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D72F10F22042D4F80027A319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +169,14 @@
 		D76F893A20545052000B3EFC /* RateRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRestaurantView.swift; sourceTree = "<group>"; };
 		D76F893C2054505D000B3EFC /* RateRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateRestaurantView.xib; sourceTree = "<group>"; };
 		D77CE6C520470B72004027A9 /* SlideImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideImageView.swift; sourceTree = "<group>"; };
+		D782BEDA205F649500EF77EC /* TabbarMenuSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarMenuSlider.swift; sourceTree = "<group>"; };
+		D782BEDC205F650100EF77EC /* TabbarMenuSlider.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarMenuSlider.xib; sourceTree = "<group>"; };
+		D782BEDF205F715000EF77EC /* ReviewsManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsManagerController.swift; sourceTree = "<group>"; };
+		D782BEE1205F7AE200EF77EC /* ReviewsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListController.swift; sourceTree = "<group>"; };
+		D782BEE6205F941F00EF77EC /* ReviewsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListCell.swift; sourceTree = "<group>"; };
+		D782BEE7205F941F00EF77EC /* ReviewsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsListCell.xib; sourceTree = "<group>"; };
+		D7959E70205C28EE009EC609 /* PhotoLibraryCollectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectCell.swift; sourceTree = "<group>"; };
+		D7959E71205C28EE009EC609 /* PhotoLibraryCollectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoLibraryCollectCell.xib; sourceTree = "<group>"; };
 		D7C66EB4205506D9003C3022 /* MenuRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRestaurantView.swift; sourceTree = "<group>"; };
 		D7C66EB6205506E2003C3022 /* MenuRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuRestaurantView.xib; sourceTree = "<group>"; };
 		F6191E4351B825CC0171A148 /* Pods-EatingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatingTests/Pods-EatingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +224,15 @@
 				7F447D17668A2F28198EB43F /* Pods-EatingUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D727E10E2060038D00561AF9 /* RecentViewedRestaurantListController */ = {
+			isa = PBXGroup;
+			children = (
+				D727E10F206003C800561AF9 /* RecentViewedRestaurantListController.swift */,
+				D727E110206003C800561AF9 /* RecentViewedRestaurantListController.xib */,
+			);
+			path = RecentViewedRestaurantListController;
 			sourceTree = "<group>";
 		};
 		D72F10DF2042D4F80027A319 = {
@@ -285,6 +314,8 @@
 		D72F111B2042D6380027A319 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				D727E10E2060038D00561AF9 /* RecentViewedRestaurantListController */,
+				D782BEDE205F712900EF77EC /* ReviewController */,
 				D74B3D12205AB950008B8E72 /* PhotosLibraryController */,
 				D75373782058D5A700FA7772 /* WriteReviewController */,
 				D7557C662055814500641DEB /* MapController */,
@@ -371,6 +402,7 @@
 		D747FB1C204510CC002EFC4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D782BED8205F646500EF77EC /* TabbarMenuSlider */,
 				D74B3D15205ADEF6008B8E72 /* AddPhotosView */,
 				D75373802058D90F00FA7772 /* HeaderPresentControllerView */,
 				D753737B2058D62B00FA7772 /* HeaderRestaurantView */,
@@ -423,6 +455,7 @@
 		D74B3D12205AB950008B8E72 /* PhotosLibraryController */ = {
 			isa = PBXGroup;
 			children = (
+				D7959E6F205C28C5009EC609 /* PhotoLibraryCollectCell */,
 				D74B3D13205AB976008B8E72 /* PhotosLibraryController.swift */,
 			);
 			path = PhotosLibraryController;
@@ -498,6 +531,43 @@
 				D77CE6C520470B72004027A9 /* SlideImageView.swift */,
 			);
 			path = SlideImageView;
+			sourceTree = "<group>";
+		};
+		D782BED8205F646500EF77EC /* TabbarMenuSlider */ = {
+			isa = PBXGroup;
+			children = (
+				D782BEDA205F649500EF77EC /* TabbarMenuSlider.swift */,
+				D782BEDC205F650100EF77EC /* TabbarMenuSlider.xib */,
+			);
+			path = TabbarMenuSlider;
+			sourceTree = "<group>";
+		};
+		D782BEDE205F712900EF77EC /* ReviewController */ = {
+			isa = PBXGroup;
+			children = (
+				D782BEE5205F93CA00EF77EC /* views */,
+				D782BEDF205F715000EF77EC /* ReviewsManagerController.swift */,
+				D782BEE1205F7AE200EF77EC /* ReviewsListController.swift */,
+			);
+			path = ReviewController;
+			sourceTree = "<group>";
+		};
+		D782BEE5205F93CA00EF77EC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D782BEE6205F941F00EF77EC /* ReviewsListCell.swift */,
+				D782BEE7205F941F00EF77EC /* ReviewsListCell.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		D7959E6F205C28C5009EC609 /* PhotoLibraryCollectCell */ = {
+			isa = PBXGroup;
+			children = (
+				D7959E70205C28EE009EC609 /* PhotoLibraryCollectCell.swift */,
+				D7959E71205C28EE009EC609 /* PhotoLibraryCollectCell.xib */,
+			);
+			path = PhotoLibraryCollectCell;
 			sourceTree = "<group>";
 		};
 		F985F236FCEC23F47DF1504B /* Frameworks */ = {
@@ -629,10 +699,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7C66EB7205506E2003C3022 /* MenuRestaurantView.xib in Resources */,
+				D782BEDD205F650100EF77EC /* TabbarMenuSlider.xib in Resources */,
 				D74B3D19205ADF24008B8E72 /* AddPhotosView.xib in Resources */,
+				D782BEE9205F941F00EF77EC /* ReviewsListCell.xib in Resources */,
 				D748EA6620459C5C00C80F9E /* RestaurantCellSearch.xib in Resources */,
 				D744B6C520582A66008AEE83 /* OtherRestaurantsView.xib in Resources */,
 				D747FB28204534C4002EFC4F /* BlockListRestaurantCard.xib in Resources */,
+				D7959E73205C28EE009EC609 /* PhotoLibraryCollectCell.xib in Resources */,
 				D744B6AD205805DD008AEE83 /* DetailsRestaurantView.xib in Resources */,
 				D7557C6520556E8200641DEB /* ImageRestaurantView.xib in Resources */,
 				D748EA6A2045C1E900C80F9E /* Main.storyboard in Resources */,
@@ -640,6 +713,7 @@
 				D72F10F32042D4F80027A319 /* Assets.xcassets in Resources */,
 				D744B6C1205827D2008AEE83 /* BlockNameRestaurantView.xib in Resources */,
 				D748EA682045BAEE00C80F9E /* Launch Screen.storyboard in Resources */,
+				D727E112206003C800561AF9 /* RecentViewedRestaurantListController.xib in Resources */,
 				D75373842058D93A00FA7772 /* HeaderPresentControllerView.xib in Resources */,
 				D76F89392053D598000B3EFC /* InformationCommonRestaurantView.xib in Resources */,
 				D753737F2058D66800FA7772 /* HeaderRestaurantView.xib in Resources */,
@@ -825,10 +899,13 @@
 			files = (
 				D75373822058D93200FA7772 /* HeaderPresentControllerView.swift in Sources */,
 				D72F11272042D74A0027A319 /* Server.swift in Sources */,
+				D782BEDB205F649500EF77EC /* TabbarMenuSlider.swift in Sources */,
+				D727E111206003C800561AF9 /* RecentViewedRestaurantListController.swift in Sources */,
 				D72F113D2042D8F10027A319 /* RestaurantDetailController.swift in Sources */,
 				D753737D2058D65F00FA7772 /* HeaderRestaurantView.swift in Sources */,
 				D744B6BE205827C3008AEE83 /* BlockNameRestaurantView.swift in Sources */,
 				D744B6B9205817BF008AEE83 /* BlockListImageSquardView.swift in Sources */,
+				D782BEE0205F715000EF77EC /* ReviewsManagerController.swift in Sources */,
 				D747FB262045349A002EFC4F /* BlockListRestaurantCard.swift in Sources */,
 				D76F893B20545052000B3EFC /* RateRestaurantView.swift in Sources */,
 				D76F89372053D583000B3EFC /* InformationCommonRestaurantView.swift in Sources */,
@@ -836,14 +913,17 @@
 				D72F112D2042D7510027A319 /* Constant.swift in Sources */,
 				D748EA702045C5C300C80F9E /* ProfileController.swift in Sources */,
 				D7557C6420556E8200641DEB /* ImageRestaurantView.swift in Sources */,
+				D7959E72205C28EE009EC609 /* PhotoLibraryCollectCell.swift in Sources */,
 				D72F112C2042D7510027A319 /* AppConfig.swift in Sources */,
 				D72F11302042D75D0027A319 /* Extensions.swift in Sources */,
 				D747FB1F204510FB002EFC4F /* RestaurantCard.swift in Sources */,
 				D753737A2058D5DA00FA7772 /* WriteReviewController.swift in Sources */,
 				D744B6C320582A5F008AEE83 /* OtherRestaurantsView.swift in Sources */,
+				D782BEE3205F7AE200EF77EC /* ReviewsListController.swift in Sources */,
 				D72F11382042D8910027A319 /* HomeController.swift in Sources */,
 				D72F11252042D74A0027A319 /* ConfigManager.swift in Sources */,
 				D748EA6520459C5C00C80F9E /* RestaurantCellSearch.swift in Sources */,
+				D782BEE8205F941F00EF77EC /* ReviewsListCell.swift in Sources */,
 				D72F11262042D74A0027A319 /* CoreDataStack.swift in Sources */,
 				D7557C692055816900641DEB /* MapController.swift in Sources */,
 				D72F11282042D74A0027A319 /* AccountManager.swift in Sources */,
@@ -1080,7 +1160,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZR6QDY93JK;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = EatingUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eating.com.vn.EatingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1096,7 +1182,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZR6QDY93JK;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = EatingUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eating.com.vn.EatingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

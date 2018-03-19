@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 ///////////////////////////////////////////////////////
 
+let isIpad = UI_USER_INTERFACE_IDIOM() == .pad
+
 //// api s3corp
 let domain = "http://Eating.s3corp.com.vn/api"
 //// MARK: - Socket server

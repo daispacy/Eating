@@ -12,6 +12,12 @@ class ReviewsRestaurantView: UIView {
 
     // MARK: - api
     
+    // MARK: - action
+    func touchButton(_ sender:UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "reviewsManager") as! ReviewsManagerController
+        controller?.present(vc, animated: true, completion: nil)
+    }
+    
     // MARK: - private
     private func config() {
         lblTitle.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -24,9 +30,12 @@ class ReviewsRestaurantView: UIView {
         btnReadAllTwo.setTitleColor(#colorLiteral(red: 0.05098039216, green: 0.6392156863, blue: 0.07843137255, alpha: 1), for: UIControlState())
         
         for _ in 0..<2 {
-            let view = Bundle.main.loadNibNamed("BlockReviewView", owner: self, options: nil)?.first as! BlockReviewView
+            let view = BlockReviewView()
             stackReviews.addArrangedSubview(view)
         }
+        
+        btnReadAllOne.addTarget(self, action: #selector(touchButton(_:)), for: .touchUpInside)
+        btnReadAllTwo.addTarget(self, action: #selector(touchButton(_:)), for: .touchUpInside)
     }
     
     // MARK: - init
@@ -39,6 +48,7 @@ class ReviewsRestaurantView: UIView {
     // MARK: - closures
     
     // MARK: - properties
+    weak var controller:UIViewController?
     
     // MARK: - outlet
     @IBOutlet weak var lblTitle: UILabel!

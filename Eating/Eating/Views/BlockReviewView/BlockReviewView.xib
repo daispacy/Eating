@@ -9,9 +9,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlockReviewView" customModule="Eating" customModuleProvider="target">
+            <connections>
+                <outlet property="btnRated" destination="VIm-Ug-V7E" id="QfG-Vj-ZKn"/>
+                <outlet property="btnReadMore" destination="73M-K6-wsl" id="moc-IL-tK7"/>
+                <outlet property="imvUserAvatar" destination="W6m-CL-L5t" id="dfa-BU-uqW"/>
+                <outlet property="lblDateReview" destination="UxA-pc-GR2" id="9hJ-1C-eQ4"/>
+                <outlet property="lblRated" destination="zRe-OJ-aAC" id="f5Z-XB-KBq"/>
+                <outlet property="lblReview" destination="GlN-07-9S8" id="wtx-ag-3td"/>
+                <outlet property="lblUserName" destination="Tdv-k7-o49" id="KJj-s8-JIa"/>
+                <outlet property="stackContentReview" destination="qBt-Mc-Zum" id="wtA-SD-OSr"/>
+                <outlet property="view" destination="iN0-l3-epB" id="7g2-IN-D1V"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="BlockReviewView" customModule="Eating" customModuleProvider="target">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="318"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -106,16 +118,6 @@
                 <constraint firstItem="EDh-Z9-CJ0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xnf-FK-Km6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="btnRated" destination="VIm-Ug-V7E" id="3Fr-C9-3W3"/>
-                <outlet property="btnReadMore" destination="73M-K6-wsl" id="AfT-56-4hf"/>
-                <outlet property="imvUserAvatar" destination="W6m-CL-L5t" id="6BR-1f-hXJ"/>
-                <outlet property="lblDateReview" destination="UxA-pc-GR2" id="bmM-bC-eHA"/>
-                <outlet property="lblRated" destination="zRe-OJ-aAC" id="BoA-bA-fgu"/>
-                <outlet property="lblReview" destination="GlN-07-9S8" id="Myv-vP-QK8"/>
-                <outlet property="lblUserName" destination="Tdv-k7-o49" id="Ltb-3U-K6x"/>
-                <outlet property="stackContentReview" destination="qBt-Mc-Zum" id="NHU-dA-P3o"/>
-            </connections>
             <point key="canvasLocation" x="31.5" y="56"/>
         </view>
     </objects>

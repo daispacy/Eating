@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 fileprivate let numberItems:CGFloat = UI_USER_INTERFACE_IDIOM() == .pad ? 8 : 4
 fileprivate let spacing:CGFloat = 5
@@ -14,17 +15,17 @@ fileprivate let spacing:CGFloat = 5
 class AddPhotosView: UIView {
 
     // MARK: - api
-    func load(data:[String]) {
-        self.data = data
+    func load(data:[PHAsset]) {
+        self.listAsset = data
         
         reset()
         
         for (i,item) in data.enumerated() {
             if CGFloat(i) == numberItems {break}
-            let imageV = imageMenu(url: item, index: (i+1), i == Int(numberItems - 2)) // 2: because we have a default image to open photos controller
+            let imageV = imageMenu(asset: item, index: (i+1), i == Int(numberItems - 2) && listAsset.count > 3) // 2: because we have a default image to open photos controller
             stackImages.addArrangedSubview(imageV)
             imageV.translatesAutoresizingMaskIntoConstraints = false
-            let width = (UIScreen.main.bounds.size.width - 20  - (numberItems-CGFloat(1))*spacing) / numberItems
+            let width = (UIScreen.main.bounds.size.width - 20  - (numberItems - 1)*spacing) / numberItems
             imageV.widthAnchor.constraint(equalToConstant: width).isActive = true
             imageV.heightAnchor.constraint(equalToConstant: width).isActive = true
         }
@@ -33,40 +34,51 @@ class AddPhotosView: UIView {
     // MARK: - action
     func touchImage(_ sender:UITapGestureRecognizer) {
         if let imv = sender.view as? UIImageView {
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "photosLibrary") as! PhotosLibraryController
-            controller?.present(vc, animated: true, completion: nil)
+            if imv.tag == 0 {
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "photosLibrary") as! PhotosLibraryController
+                controller?.present(vc, animated: true, completion: nil)
+                vc.listSelectedPhotos = self.listAsset
+                vc.onListSelectedPhotos = {[weak self] listAsset in
+                    guard let _self = self else {return}
+                    _self.load(data: listAsset)
+                }
+            } else {
+                // open list controller editable photos
+                
+            }
         }
     }
     
     // MARK: - private
     private func reset() {
-        for (i,_) in listTapGesture.reversed().enumerated() {
-            if i < listTapGesture.count - 1 {
-                listTapGesture.remove(at: i)
-            }
-        }
+        
         for (i,imv) in stackImages.arrangedSubviews.reversed().enumerated() {
-            if i < listTapGesture.count - 1 {
+            if imv.tag != 0 {
                 let tap = listTapGesture.reversed()[i]
                 imv.removeGestureRecognizer(tap)
                 imv.removeFromSuperview()
             }
         }
+        
+        for (i,_) in listTapGesture.reversed().enumerated() {
+            if i < listTapGesture.count - 1 {
+                listTapGesture.remove(at: i)
+            }
+        }
+        
         listImages.removeAll()
     }
     
-    private func imageMenu(url:String,index:Int ,_ isShowMore:Bool = false) -> UIImageView{
+    private func imageMenu(asset:PHAsset,index:Int ,_ isShowMore:Bool = false) -> UIImageView{
         let imageView = UIImageView(frame: self.frame)
         imageView.tag = index
         imageView.contentMode = .scaleAspectFill
         imageView.isUserInteractionEnabled = true
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 3
-        imageView.loadImageUsingCacheWithURLString(url,
-                                                   size: nil,
-                                                   placeHolder: nil, false) {[weak self] (image) in
-                                                    guard let _self = self, let img = image else {return}
-                                                    _self.listImages.append(img)
+        asset.getImage(size: CGSize(width: 100, height: 100)) {[weak self] image in
+            guard let _ = self, let image = image else {return}
+            imageView.image = image
         }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(touchImage(_:)))
@@ -84,7 +96,7 @@ class AddPhotosView: UIView {
             label.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
             imageView.trailingAnchor.constraint(equalTo: label.trailingAnchor).isActive = true
             label.bottomAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
-            label.text = " +6 PHOTO "
+            label.text = " +\(listAsset.count - Int(numberItems - 1)) PHOTO "
             label.font = UIFont.systemFont(ofSize: fontSize13)
             imageView.bringSubview(toFront: label)
         }
@@ -144,8 +156,8 @@ class AddPhotosView: UIView {
     // MARK: - closures
     
     // MARK: - properties
-    var data:[String] = []
-    var controller:UIViewController?
+    var listAsset:[PHAsset] = []
+    weak var controller:UIViewController?
     var listImages:[UIImage] = []
     var listTapGesture:[UITapGestureRecognizer] = []
     

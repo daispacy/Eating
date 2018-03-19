@@ -11,6 +11,10 @@ import UIKit
 class BlockReviewView: UIView {
 
     // MARK: - api
+    func prepareReused() {
+        imvUserAvatar.image = nil
+    }
+    
     
     // MARK: - action
     func touchButton(_ sender:UIButton) {
@@ -66,17 +70,42 @@ class BlockReviewView: UIView {
         
         lblReview.attributedText = attributedText
         
-        photosAttachedView = Bundle.main.loadNibNamed("BlockListImageSquardView", owner: self, options: nil)?.first as! BlockListImageSquardView
-        photosAttachedView.loadFakeImages()
-        stackContentReview.addArrangedSubview(photosAttachedView)
+        if stackContentReview.arrangedSubviews.count < 3 {
+            photosAttachedView = Bundle.main.loadNibNamed("BlockListImageSquardView", owner: self, options: nil)?.first as! BlockListImageSquardView
+            photosAttachedView.loadFakeImages()
+            stackContentReview.addArrangedSubview(photosAttachedView)
+        }
         
         btnReadMore.addTarget(self, action: #selector(touchButton(_:)), for: .touchUpInside)
+    }
+    
+    func loadNib() {
+        Bundle.main.loadNibNamed("BlockReviewView", owner: self, options: nil)
+        self.addSubview(self.view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        view.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     // MARK: - init
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        config()
+        
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadNib()
+        config()
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        loadNib()
         config()
     }
     
@@ -86,6 +115,7 @@ class BlockReviewView: UIView {
     var photosAttachedView:BlockListImageSquardView!
     
     // MARK: - outlet
+    @IBOutlet weak var view:UIView!
     @IBOutlet weak var imvUserAvatar: UIImageViewRound!
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var lblRated: UILabel!

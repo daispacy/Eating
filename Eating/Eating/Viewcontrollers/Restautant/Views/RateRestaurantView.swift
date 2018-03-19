@@ -13,7 +13,7 @@ enum RateRestaurantType {
     case full
 }
 
-protocol RateRestaurantViewDelegate {
+protocol RateRestaurantViewDelegate: class {
     func rateRestaurant(assign view:RateRestaurantView)
 }
 
@@ -186,8 +186,8 @@ class RateRestaurantView: UIView {
     
     // MARK: - properties
     var star:Int = 0
-    var delegate:RateRestaurantViewDelegate?
-    var controller:UIViewController?
+    weak var delegate:RateRestaurantViewDelegate?
+    weak var controller:UIViewController?
     var type:RateRestaurantType = .full {
         didSet {
             changeType()

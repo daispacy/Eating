@@ -60,7 +60,7 @@ class InformationCommonRestaurantView: UIView {
     // MARK: - closures
     
     // MARK: - properties
-    var controller:UIViewController?
+    weak var controller:UIViewController?
     
     // MARK: - outlet
     @IBOutlet weak var lblName: UILabel!

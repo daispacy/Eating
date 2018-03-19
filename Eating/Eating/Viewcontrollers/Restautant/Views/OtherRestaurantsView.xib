@@ -9,9 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OtherRestaurantsView" customModule="Eating" customModuleProvider="target">
+            <connections>
+                <outlet property="btnSeeAll" destination="xos-Ou-lfu" id="pqS-tb-BRy"/>
+                <outlet property="lblTitle" destination="G4D-Yz-rwI" id="RbS-if-u2n"/>
+                <outlet property="stackContainer" destination="FNF-17-Cza" id="ovY-ep-ADd"/>
+                <outlet property="view" destination="iN0-l3-epB" id="3aG-5u-Jrs"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="OtherRestaurantsView" customModule="Eating" customModuleProvider="target">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -44,11 +51,6 @@
                 <constraint firstItem="yRO-Bm-iMp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="u9l-8j-shx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="btnSeeAll" destination="xos-Ou-lfu" id="oWu-TX-Gzs"/>
-                <outlet property="lblTitle" destination="G4D-Yz-rwI" id="trz-Qa-arZ"/>
-                <outlet property="stackContainer" destination="FNF-17-Cza" id="P37-zX-2jo"/>
-            </connections>
             <point key="canvasLocation" x="33.5" y="96.5"/>
         </view>
     </objects>

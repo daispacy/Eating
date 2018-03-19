@@ -9,9 +9,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderRestaurantView" customModule="Eating" customModuleProvider="target">
+            <connections>
+                <outlet property="lblSubtitle" destination="KtV-it-0Ie" id="yPk-PL-vjs"/>
+                <outlet property="lblTitle" destination="jiO-4n-HW5" id="vdR-Me-PjJ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="k1i-PE-PSf"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="HeaderRestaurantView" customModule="Eating" customModuleProvider="target">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -41,10 +47,6 @@
                 <constraint firstAttribute="trailing" secondItem="8xe-QV-ubg" secondAttribute="trailing" id="twQ-0m-5uq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="lblSubtitle" destination="KtV-it-0Ie" id="bzG-xM-nba"/>
-                <outlet property="lblTitle" destination="jiO-4n-HW5" id="B7p-IU-deO"/>
-            </connections>
             <point key="canvasLocation" x="22.5" y="-181.5"/>
         </view>
     </objects>

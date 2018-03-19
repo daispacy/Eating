@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteReviewController: BaseController {
+class WriteReviewController: BasePresentController {
 
     // MARK: - api
     
@@ -35,23 +35,57 @@ class WriteReviewController: BaseController {
         photoView.controller = self
         
         // add name restaurant view
-        headerRestaurantView = Bundle.main.loadNibNamed("HeaderRestaurantView", owner: self, options: nil)?.first as! HeaderRestaurantView
-        stackContainer.insertArrangedSubview(headerRestaurantView, at: 0)
         
-        // add Rate Restaurant View
+        // config Rate Restaurant View
         stackRates.addArrangedSubview(rateRestaurantView)
         
         lblTitleRate.font = UIFont.systemFont(ofSize: fontSize13)
         lblTitleRate.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        // config write comment
         lblTitleComment.font = UIFont.systemFont(ofSize: fontSize13)
         lblTitleComment.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        textViewComment.font = UIFont.systemFont(ofSize: fontSize16)
+        textViewComment.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         bottomLineComment.alpha = 0.4
         
         view.bringSubview(toFront: vwHeader)
+        
+        txtPlaceholder.textColor = #colorLiteral(red: 0.6156862745, green: 0.6156862745, blue: 0.6156862745, alpha: 1)
+        txtPlaceholder.font = UIFont.boldSystemFont(ofSize: fontSize17)
+        
+        checkShowPlaceholder()
     }
     
-    func scrollToCusorPosition(textView:UITextView) {
+    private func checkShowPlaceholder() {
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.1, animations: {
+            if self.textViewComment.text.characters.count > 0 {
+                self.textViewComment.alpha = 1
+                self.txtPlaceholder.alpha = 0
+                self.topConstraintBottomLineTextView.priority = 750
+                self.topConstraintBottomLineLabel.priority = 250
+            } else {
+                self.textViewComment.alpha = 0
+                self.txtPlaceholder.alpha = 1
+                self.topConstraintBottomLineTextView.priority = 250
+                self.topConstraintBottomLineLabel.priority = 750
+            }
+            self.view.layoutIfNeeded()
+        },completion:{done in
+            if self.textViewComment.text.characters.count > 0 {
+                self.textViewComment.isHidden = false
+                self.txtPlaceholder.isHidden = true
+            } else {
+                self.textViewComment.isHidden = true
+                self.txtPlaceholder.isHidden = false
+            }
+        })
+    }
+    
+    fileprivate func scrollToCusorPosition(textView:UITextView) {
         if let range:UITextRange = textView.selectedTextRange {
             let position = range.end
             let cursorRect = textView.caretRect(for: position)
@@ -59,7 +93,9 @@ class WriteReviewController: BaseController {
             currentContentOffset = CGPoint(x: 0, y: (cursorPoint.y - keyboardHeight + 20))
             print(cursorRect)
             if cursorPoint.y.isNaN || cursorPoint.y.isInfinite || scrollView.contentOffset.y ==  currentContentOffset.y {return}
-            scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: scrollView.contentSize.width - 1, y: scrollView.contentSize.height - 1), size: CGSize(width: 1, height: 1)), animated: true)
+            let numberItems = UIDevice.current.userInterfaceIdiom == .pad ? CGFloat(8) : CGFloat(4)
+            let height = (UIScreen.main.bounds.size.width - 20  - (numberItems - 1)*5) / numberItems // height of func add photos
+            scrollView.scrollRectToVisible(CGRect(origin: CGPoint(x: scrollView.contentSize.width - 1, y: scrollView.contentSize.height - height), size: CGSize(width: 1, height: 1)), animated: true)
         }
     }
     
@@ -82,13 +118,27 @@ class WriteReviewController: BaseController {
     
     func keyboardWillShow(notification:NSNotification) {
         bottomLineComment.alpha = 1
-        bottomConstraintScrollView.constant = keyboardHeight + 40
+        bottomConstraintScrollView.constant = keyboardHeight
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.1, animations: {
+            self.topConstraintBottomLineTextView.priority = 750
+            self.topConstraintBottomLineLabel.priority = 250
+            self.view.layoutIfNeeded()
+        },completion:{done in
+            self.textViewComment.alpha = 1
+            self.txtPlaceholder.alpha = 0
+            self.textViewComment.isHidden = false
+            self.txtPlaceholder.isHidden = true
+        })
+        
+        
     }
     
     func keyboardWillHide(notification:NSNotification) {
         bottomLineComment.alpha = 0.4
         bottomConstraintScrollView.constant = 0
         view.endEditing(true)
+        checkShowPlaceholder()
     }
     
     // MARK: - init
@@ -98,13 +148,20 @@ class WriteReviewController: BaseController {
         config()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        txtPlaceholder.addEvent {[weak self] in
+            guard let _self = self else {return}
+            _self.textViewComment.becomeFirstResponder()
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        onDissmiss?()
+        txtPlaceholder.removeEvent()
     }
     
     deinit {
-        print("writereviewcontroller dealloc")
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
@@ -118,11 +175,11 @@ class WriteReviewController: BaseController {
     var keyboardHeight:CGFloat = 210
     var shouldScrollToCursor:Bool = true
     var tapgesture:UITapGestureRecognizer!
-    var headerRestaurantView:HeaderRestaurantView!
     var rateRestaurantView:RateRestaurantView!
     
     // MARK: - outlet
     
+    @IBOutlet weak var headerRestaurantView: HeaderRestaurantView!
     @IBOutlet weak var photoView: AddPhotosView!
     @IBOutlet weak var vwHeader: HeaderPresentControllerView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -133,11 +190,14 @@ class WriteReviewController: BaseController {
     @IBOutlet weak var lblTitleComment: UILabel!
     @IBOutlet weak var bottomLineComment: UIView!
     @IBOutlet weak var textViewComment: UITextView!
+    @IBOutlet weak var txtPlaceholder: UILabel!
     
-    @IBOutlet weak var topConstraintScrollView: NSLayoutConstraint!
+    @IBOutlet weak var topConstraintBottomLineLabel: NSLayoutConstraint!
+    @IBOutlet weak var topConstraintBottomLineTextView: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraintScrollView: NSLayoutConstraint!
 }
 
+// MARK: -
 extension WriteReviewController:UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // hide/show bottom line on header controller
@@ -149,6 +209,7 @@ extension WriteReviewController:UIScrollViewDelegate {
     }
 }
 
+// MARK: -
 extension WriteReviewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {

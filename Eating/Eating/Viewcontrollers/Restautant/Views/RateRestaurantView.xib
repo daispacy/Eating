@@ -28,49 +28,49 @@
                             <rect key="frame" x="0.0" y="30.5" width="366" height="30"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vxM-98-jdb">
-                                    <rect key="frame" x="0.0" y="0.0" width="232" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="257" height="30"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lra-C6-Jh4">
-                                            <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="DCY-fC-ITV"/>
-                                                <constraint firstAttribute="width" constant="40" id="zeq-eM-h2O"/>
+                                                <constraint firstAttribute="width" constant="45" id="zeq-eM-h2O"/>
                                             </constraints>
                                             <state key="normal" title="1" image="star">
                                                 <color key="titleColor" red="0.77505667099999997" green="0.77505667099999997" blue="0.77505667099999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOv-zl-Hc9">
-                                            <rect key="frame" x="48" y="0.0" width="40" height="30"/>
+                                            <rect key="frame" x="53" y="0.0" width="45" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="Drh-vl-0yq"/>
+                                                <constraint firstAttribute="width" constant="45" id="Drh-vl-0yq"/>
                                             </constraints>
                                             <state key="normal" title="1" image="star">
                                                 <color key="titleColor" red="0.77505667099999997" green="0.77505667099999997" blue="0.77505667099999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP2-xR-3tW">
-                                            <rect key="frame" x="96" y="0.0" width="40" height="30"/>
+                                            <rect key="frame" x="106" y="0.0" width="45" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="owj-Fn-37L"/>
+                                                <constraint firstAttribute="width" constant="45" id="owj-Fn-37L"/>
                                             </constraints>
                                             <state key="normal" title="1" image="star">
                                                 <color key="titleColor" red="0.77505667099999997" green="0.77505667099999997" blue="0.77505667099999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymG-0j-IKl">
-                                            <rect key="frame" x="144" y="0.0" width="40" height="30"/>
+                                            <rect key="frame" x="159" y="0.0" width="45" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="XNd-ky-8I1"/>
+                                                <constraint firstAttribute="width" constant="45" id="XNd-ky-8I1"/>
                                             </constraints>
                                             <state key="normal" title="1" image="star">
                                                 <color key="titleColor" red="0.77505667099999997" green="0.77505667099999997" blue="0.77505667099999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyC-s4-2KY">
-                                            <rect key="frame" x="192" y="0.0" width="40" height="30"/>
+                                            <rect key="frame" x="212" y="0.0" width="45" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="Fri-iE-Myr"/>
+                                                <constraint firstAttribute="width" constant="45" id="Fri-iE-Myr"/>
                                             </constraints>
                                             <state key="normal" title="1" image="star">
                                                 <color key="titleColor" red="0.77505667099999997" green="0.77505667099999997" blue="0.77505667099999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

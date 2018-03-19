@@ -279,11 +279,16 @@ extension UIImageView {
         let mask = UIView(frame: self.bounds)
         if !removeIconCheck {
             let imv = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-            imv.image = UIImage(named: "ic_check_circle_128")?.tint(with: UIColor.white)
+            imv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            imv.layer.borderWidth = 1
+            imv.layer.borderColor = color.cgColor
+            imv.layer.masksToBounds = true
+            imv.layer.cornerRadius = 15
+            imv.image = #imageLiteral(resourceName: "ic_circle_check").resizeImageWith(newSize: CGSize(width: 30, height: 30)).tint(with: color)
             mask.addSubview(imv)
             imv.translatesAutoresizingMaskIntoConstraints = false
-            imv.topAnchor.constraint(equalTo: imv.superview!.topAnchor, constant: 5).isActive = true
-            imv.rightAnchor.constraint(equalTo: imv.superview!.rightAnchor, constant: -5).isActive = true
+            imv.topAnchor.constraint(equalTo: imv.superview!.topAnchor, constant: 10).isActive = true
+            imv.superview?.trailingAnchor.constraint(equalTo: imv.trailingAnchor, constant: 10).isActive = true
             imv.widthAnchor.constraint(equalToConstant: 30).isActive = true
             imv.heightAnchor.constraint(equalToConstant: 30).isActive = true
         }
@@ -295,6 +300,9 @@ extension UIImageView {
         mask.trailingAnchor.constraint(equalTo: mask.superview!.trailingAnchor, constant: 0).isActive = true
         mask.bottomAnchor.constraint(equalTo: mask.superview!.bottomAnchor, constant: 0).isActive = true
         mask.leadingAnchor.constraint(equalTo: mask.superview!.leadingAnchor, constant: 0).isActive = true
+        mask.layer.masksToBounds = true
+        mask.layer.borderColor = color.cgColor
+        mask.layer.borderWidth = 3
     }
     
     func removeMask() {
@@ -938,6 +946,16 @@ extension UITableView {
 // MARK: - COLLECTVIEW
 extension UICollectionView {
     func pullResfresh(_ event:(()->Void)) {
+        if let _ = objc_getAssociatedObject(self, &RefreshControl) as? UIRefreshControl {
+            print("detect refreshControl on uicollectview dont created => creating")
+        } else {
+            let refreshControl = UIRefreshControl()
+            objc_setAssociatedObject(self, &RefreshControl, refreshControl, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            refreshControl.attributedTitle = nil//NSAttributedString(string: "pull_to_refresh".localized())
+            refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: UIControlEvents.valueChanged)
+            self.addSubview(refreshControl)
+        }
+        
         objc_setAssociatedObject(self, &PullRefreshEvent, event, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     
@@ -954,15 +972,6 @@ extension UICollectionView {
             return refreshControl.isRefreshing
         }
         return false
-    }
-    
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        let refreshControl = UIRefreshControl()
-        objc_setAssociatedObject(self, &RefreshControl, refreshControl, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        refreshControl.attributedTitle = nil//NSAttributedString(string: "pull_to_refresh".localized())
-        refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: UIControlEvents.valueChanged)
-        self.addSubview(refreshControl)
     }
     
     func refresh(sender:AnyObject) {
@@ -1230,6 +1239,15 @@ class PushZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitionin
 
 // MARK: - PHAsset
 extension PHAsset {
+    
+    func getImage(size:CGSize,_ completion:((UIImage?)->Void)? = nil) {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        option.isSynchronous = false
+        manager.requestImage(for: self, targetSize: size, contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            completion?(result!)
+        })
+    }
     
     func getURL(completionHandler : @escaping ((_ responseURL : URL?) -> Void)){
         if self.mediaType == .image {

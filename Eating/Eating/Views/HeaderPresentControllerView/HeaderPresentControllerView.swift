@@ -12,14 +12,22 @@ class HeaderPresentControllerView: UIView {
 
     // MARK: - api
     func effect(with scrollView:UIScrollView) {
-        UIView.animate(withDuration: 0.1, animations: {
-            self.bottomLine.alpha = scrollView.contentOffset.y > 0 ? 1 : 0
+        UIView.animate(withDuration: 0.1, animations: {[weak self] in
+            guard let _self = self else {return}
+            _self.bottomLine.alpha = scrollView.contentOffset.y > 0 ? 1 : 0
         })
     }
     
     // MARK: - action
     func touchButton(_ sender:UIButton) {
-        controller?.dismiss(animated: true, completion: nil)
+        if let vc = controller, let v = vc as? BasePresentController {
+            v.onDissmiss?()
+        }
+        if isPresent {
+            controller?.dismiss(animated: true, completion: nil)
+        } else {
+            controller?.navigationController?.popViewController(animated: true)
+        }
     }
     
     // MARK: - private
@@ -62,8 +70,17 @@ class HeaderPresentControllerView: UIView {
     // MARK: - closures
     
     // MARK: - properties
-    var controller:UIViewController?
-    @IBOutlet var view: UIView!
+    var isPresent:Bool = true {
+        didSet {
+            if isPresent {
+                btnClose.imageView?.transform = .identity
+            } else {
+                btnClose.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+            }
+        }
+    }
+    weak var controller:UIViewController?
+    @IBOutlet weak var view: UIView!
     
     // MARK: - outlet
     @IBOutlet weak var bottomLine: UIView!

@@ -24,11 +24,31 @@ class HeaderRestaurantView: UIView {
         lblSubtitle.font = UIFont.systemFont(ofSize: fontSize17)
     }
     
+    private func loadNIB() {
+        Bundle.main.loadNibNamed("HeaderRestaurantView", owner: self, options: nil)
+        addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        view.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+    
     // MARK: - init
     override func awakeFromNib() {
         super.awakeFromNib()
         
         config()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadNIB()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        loadNIB()
     }
     
     // MARK: - closures
@@ -38,5 +58,6 @@ class HeaderRestaurantView: UIView {
     // MARK: - outlet
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblSubtitle: UILabel!
+    @IBOutlet var view: UIView!
     
 }

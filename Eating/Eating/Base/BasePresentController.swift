@@ -31,10 +31,5 @@ class BasePresentController: BaseController {
 
         // Do any additional setup after loading the view.
     }
-
-    deinit {
-        #if DEBUG
-            print("\(self.description) dealloc")
-        #endif
-    }
+    
 }

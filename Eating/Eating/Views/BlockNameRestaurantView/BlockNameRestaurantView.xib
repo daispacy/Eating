@@ -9,9 +9,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlockNameRestaurantView" customModule="Eating" customModuleProvider="target">
+            <connections>
+                <outlet property="icon" destination="beD-Or-4zp" id="dUs-Ft-7zb"/>
+                <outlet property="lblRate" destination="wfg-1y-hBE" id="WDU-gR-wAY"/>
+                <outlet property="lblSubtitle" destination="bEJ-Nr-Nhj" id="ABN-iA-pHE"/>
+                <outlet property="lblTitle" destination="82k-KH-AhX" id="a3r-KB-1hY"/>
+                <outlet property="view" destination="iN0-l3-epB" id="bdP-5D-Sst"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="BlockNameRestaurantView" customModule="Eating" customModuleProvider="target">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -58,12 +66,6 @@
                 <constraint firstItem="beD-Or-4zp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="zyf-eJ-VOL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="icon" destination="beD-Or-4zp" id="dQJ-Cl-KpY"/>
-                <outlet property="lblRate" destination="wfg-1y-hBE" id="MuP-wu-Fhi"/>
-                <outlet property="lblSubtitle" destination="bEJ-Nr-Nhj" id="IoS-Qm-3oS"/>
-                <outlet property="lblTitle" destination="82k-KH-AhX" id="28W-kL-E3E"/>
-            </connections>
             <point key="canvasLocation" x="26.5" y="61.5"/>
         </view>
     </objects>

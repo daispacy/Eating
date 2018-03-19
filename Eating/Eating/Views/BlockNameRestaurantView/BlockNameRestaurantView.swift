@@ -36,12 +36,35 @@ class BlockNameRestaurantView: UIView {
         icon.loadImageUsingCacheWithURLString(["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCde9ByZhZbfzmgC6dejFPA3uG4uwzhtKMylAIl6NPo8uuUn1UdA","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ9S3o8jHYRrCRG_G1O7qLqKj3XI0nnZfdf-lhr0aiN6MHQbE1JQ","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd6zlG1TTU-hKsQhvvImS7Je0kdc3u1DrafmaWSthxeDrqevGGzw"].chooseOne)
     }
     
+    func loadNib() {
+        Bundle.main.loadNibNamed("BlockNameRestaurantView", owner: self, options: nil)
+        self.addSubview(self.view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        view.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+    
     // MARK: - init
     override func awakeFromNib() {
         super.awakeFromNib()
         
         config()
+        
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadNib()
+        config()
         loadFakeData()
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        loadNib()
+        config()
     }
     
     // MARK: - closures
@@ -49,6 +72,7 @@ class BlockNameRestaurantView: UIView {
     // MARK: - properties
     
     // MARK: - outlet
+    @IBOutlet var view: UIView!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblSubtitle: UILabel!
