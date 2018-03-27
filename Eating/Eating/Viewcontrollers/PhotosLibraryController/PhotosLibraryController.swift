@@ -12,13 +12,23 @@ import Photos
 fileprivate let column = UIDevice.current.userInterfaceIdiom == .pad ? CGFloat(6) : CGFloat(3)
 fileprivate let space = CGFloat(10)
 
+enum PhotosLibraryControllerType {
+    case select // use for write review page
+    case view // use show list photo for url
+}
+
 class PhotosLibraryController: BasePresentController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     // MARK: - api
     
     // MARK: - private
     private func config() {
-        menuView.controller = self
+        
+        if type == .select {
+            menuView.controller = self
+        } else {
+            menuView.removeFromSuperview()
+        }
         
         collectView.register(UINib(nibName: "PhotoLibraryCollectCell", bundle: Bundle.main), forCellWithReuseIdentifier: "cell")
         collectView.delegate = self
@@ -84,7 +94,11 @@ class PhotosLibraryController: BasePresentController, UINavigationControllerDele
         super.viewDidLoad()
         
         config()
-        loadPhotos()
+        if type == .select {
+            loadPhotos()
+        } else if type == .view {
+            collectView.reloadData()
+        }
     }
    
     // MARK: - closures
@@ -94,10 +108,13 @@ class PhotosLibraryController: BasePresentController, UINavigationControllerDele
     // MARK: - properties
     var listPhotos:[PHAsset] = []
     var listSelectedPhotos:[PHAsset] = []
+    var listUrls:[String] = []
+    var type:PhotosLibraryControllerType = .select
     
     // MARK: - outlet
     @IBOutlet weak var menuView: HeaderPresentControllerView!
     @IBOutlet weak var collectView: UICollectionView!
+    @IBOutlet weak var stackContainer: UIStackView!
     
 }
 
@@ -148,16 +165,42 @@ extension PhotosLibraryController:UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.listPhotos.count + 1
+        if type == .select {
+            return self.listPhotos.count + 1
+        } else {
+            return listUrls.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PhotoLibraryCollectCell
-        cell.load(asset: indexPath.row == 0 ? nil : listPhotos[indexPath.row - 1], (indexPath.row != 0 && listSelectedPhotos.contains(listPhotos[indexPath.row - 1])))
+        if type == .select {
+            cell.load(asset: indexPath.row == 0 ? nil : listPhotos[indexPath.row - 1], (indexPath.row != 0 &&  listSelectedPhotos.contains(listPhotos[indexPath.row - 1])))
+        } else {
+            // load url
+            cell.load(url: listUrls[indexPath.row])
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if type == .view {
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "galleryController") as! GalleryController
+            vc.listUrls = listUrls
+            vc.viewedIndex = indexPath.row
+            
+            let attributes = collectionView.layoutAttributesForItem(at: indexPath)
+            let cellRect = attributes!.frame
+            var cellFrameInSuperview =  collectionView.convert(cellRect, to: self.view)
+            cellFrameInSuperview.origin.x = cellFrameInSuperview.origin.x - cellFrameInSuperview.size.width
+            cellFrameInSuperview.origin.y = cellFrameInSuperview.origin.y - cellFrameInSuperview.size.height
+            vc.startFrame = cellFrameInSuperview
+            
+            self.parent?.navigationController?.present(vc, animated: false, completion: nil)
+            return
+        }
+        
         if indexPath.row == 0 {
             openCamera(view: collectionView.cellForItem(at: indexPath))
         } else {
@@ -196,6 +239,8 @@ UICollectionViewDelegateFlowLayout {
 extension PhotosLibraryController:UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // hide/show bottom line on header controller
-        menuView.effect(with: scrollView)
+        if type == .select {
+            menuView.effect(with: scrollView)
+        }
     }
 }

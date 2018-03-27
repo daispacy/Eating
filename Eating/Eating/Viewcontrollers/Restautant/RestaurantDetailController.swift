@@ -31,6 +31,7 @@ class RestaurantDetailController: BaseController {
 
         // add menu restaurant view
         imageRestaurant = Bundle.main.loadNibNamed("ImageRestaurantView", owner: self, options: nil)?.first as! ImageRestaurantView
+        imageRestaurant.controller = self
         stackContainer.addArrangedSubview(imageRestaurant)
         imageRestaurant.loadFakeImages()
 

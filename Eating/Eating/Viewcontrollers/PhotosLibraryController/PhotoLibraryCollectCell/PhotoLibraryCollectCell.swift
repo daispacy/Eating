@@ -12,6 +12,11 @@ import Photos
 class PhotoLibraryCollectCell: UICollectionViewCell {
 
     // MARK: - api
+    func load(url:String) {
+        imageView.contentMode = .scaleAspectFill
+        imageView.loadImageUsingCacheWithURLString(url)
+    }
+    
     func load(asset:PHAsset? = nil,_ isSelected:Bool = false) {
         if let asset = asset {
             imageView.contentMode = .scaleAspectFill

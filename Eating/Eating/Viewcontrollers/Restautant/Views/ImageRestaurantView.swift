@@ -37,7 +37,8 @@ class ImageRestaurantView: UIView {
     
     // MARK: - action
     func touchImage(_ sender:UITapGestureRecognizer) {
-        
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "photosManagerController") as! PhotosManagerController
+        controller?.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - private
@@ -94,6 +95,7 @@ class ImageRestaurantView: UIView {
     // MARK: - properties
     var listImages:[UIImage] = []
     var listTapGesture:[UITapGestureRecognizer] = []
+    weak var controller:UIViewController?
     
     // MARK: - outlet
     @IBOutlet weak var stackContainer: UIStackView!

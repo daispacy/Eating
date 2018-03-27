@@ -54,6 +54,7 @@
 		D74B3D14205AB976008B8E72 /* PhotosLibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B3D13205AB976008B8E72 /* PhotosLibraryController.swift */; };
 		D74B3D17205ADF0F008B8E72 /* AddPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B3D16205ADF0F008B8E72 /* AddPhotosView.swift */; };
 		D74B3D19205ADF24008B8E72 /* AddPhotosView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74B3D18205ADF24008B8E72 /* AddPhotosView.xib */; };
+		D74FA0F12069EC9700E18E04 /* PhotosManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74FA0F02069EC9700E18E04 /* PhotosManagerController.swift */; };
 		D753737A2058D5DA00FA7772 /* WriteReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75373792058D5DA00FA7772 /* WriteReviewController.swift */; };
 		D753737D2058D65F00FA7772 /* HeaderRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D753737C2058D65F00FA7772 /* HeaderRestaurantView.swift */; };
 		D753737F2058D66800FA7772 /* HeaderRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D753737E2058D66800FA7772 /* HeaderRestaurantView.xib */; };
@@ -73,6 +74,10 @@
 		D782BEE3205F7AE200EF77EC /* ReviewsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782BEE1205F7AE200EF77EC /* ReviewsListController.swift */; };
 		D782BEE8205F941F00EF77EC /* ReviewsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782BEE6205F941F00EF77EC /* ReviewsListCell.swift */; };
 		D782BEE9205F941F00EF77EC /* ReviewsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D782BEE7205F941F00EF77EC /* ReviewsListCell.xib */; };
+		D7954B782068A90000F55F49 /* GalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7954B772068A90000F55F49 /* GalleryView.xib */; };
+		D7954B7A2068A90E00F55F49 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7954B792068A90E00F55F49 /* GalleryView.swift */; };
+		D7954B7C2068A92A00F55F49 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7954B7B2068A92A00F55F49 /* BaseUIView.swift */; };
+		D7954B7F2068ABEA00F55F49 /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7954B7E2068ABEA00F55F49 /* GalleryController.swift */; };
 		D7959E72205C28EE009EC609 /* PhotoLibraryCollectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7959E70205C28EE009EC609 /* PhotoLibraryCollectCell.swift */; };
 		D7959E73205C28EE009EC609 /* PhotoLibraryCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7959E71205C28EE009EC609 /* PhotoLibraryCollectCell.xib */; };
 		D7C66EB5205506D9003C3022 /* MenuRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C66EB4205506D9003C3022 /* MenuRestaurantView.swift */; };
@@ -156,6 +161,7 @@
 		D74B3D13205AB976008B8E72 /* PhotosLibraryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosLibraryController.swift; sourceTree = "<group>"; };
 		D74B3D16205ADF0F008B8E72 /* AddPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotosView.swift; sourceTree = "<group>"; };
 		D74B3D18205ADF24008B8E72 /* AddPhotosView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPhotosView.xib; sourceTree = "<group>"; };
+		D74FA0F02069EC9700E18E04 /* PhotosManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosManagerController.swift; sourceTree = "<group>"; };
 		D75373792058D5DA00FA7772 /* WriteReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewController.swift; sourceTree = "<group>"; };
 		D753737C2058D65F00FA7772 /* HeaderRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRestaurantView.swift; sourceTree = "<group>"; };
 		D753737E2058D66800FA7772 /* HeaderRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderRestaurantView.xib; sourceTree = "<group>"; };
@@ -175,6 +181,10 @@
 		D782BEE1205F7AE200EF77EC /* ReviewsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListController.swift; sourceTree = "<group>"; };
 		D782BEE6205F941F00EF77EC /* ReviewsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsListCell.swift; sourceTree = "<group>"; };
 		D782BEE7205F941F00EF77EC /* ReviewsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsListCell.xib; sourceTree = "<group>"; };
+		D7954B772068A90000F55F49 /* GalleryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryView.xib; sourceTree = "<group>"; };
+		D7954B792068A90E00F55F49 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		D7954B7B2068A92A00F55F49 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
+		D7954B7E2068ABEA00F55F49 /* GalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryController.swift; sourceTree = "<group>"; };
 		D7959E70205C28EE009EC609 /* PhotoLibraryCollectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectCell.swift; sourceTree = "<group>"; };
 		D7959E71205C28EE009EC609 /* PhotoLibraryCollectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoLibraryCollectCell.xib; sourceTree = "<group>"; };
 		D7C66EB4205506D9003C3022 /* MenuRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRestaurantView.swift; sourceTree = "<group>"; };
@@ -299,6 +309,7 @@
 				D72F10F72042D4F80027A319 /* Info.plist */,
 				D748EA672045BAEE00C80F9E /* Launch Screen.storyboard */,
 				D748EA692045C1E900C80F9E /* Main.storyboard */,
+				D7954B7B2068A92A00F55F49 /* BaseUIView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -314,6 +325,8 @@
 		D72F111B2042D6380027A319 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				D74FA0EF2069EC7B00E18E04 /* ListPhotosController */,
+				D7954B7D2068ABCD00F55F49 /* GalleryController */,
 				D727E10E2060038D00561AF9 /* RecentViewedRestaurantListController */,
 				D782BEDE205F712900EF77EC /* ReviewController */,
 				D74B3D12205AB950008B8E72 /* PhotosLibraryController */,
@@ -402,6 +415,7 @@
 		D747FB1C204510CC002EFC4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D7954B762068A8E300F55F49 /* GalleryView */,
 				D782BED8205F646500EF77EC /* TabbarMenuSlider */,
 				D74B3D15205ADEF6008B8E72 /* AddPhotosView */,
 				D75373802058D90F00FA7772 /* HeaderPresentControllerView */,
@@ -468,6 +482,14 @@
 				D74B3D18205ADF24008B8E72 /* AddPhotosView.xib */,
 			);
 			path = AddPhotosView;
+			sourceTree = "<group>";
+		};
+		D74FA0EF2069EC7B00E18E04 /* ListPhotosController */ = {
+			isa = PBXGroup;
+			children = (
+				D74FA0F02069EC9700E18E04 /* PhotosManagerController.swift */,
+			);
+			path = ListPhotosController;
 			sourceTree = "<group>";
 		};
 		D75373782058D5A700FA7772 /* WriteReviewController */ = {
@@ -559,6 +581,23 @@
 				D782BEE7205F941F00EF77EC /* ReviewsListCell.xib */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		D7954B762068A8E300F55F49 /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				D7954B772068A90000F55F49 /* GalleryView.xib */,
+				D7954B792068A90E00F55F49 /* GalleryView.swift */,
+			);
+			path = GalleryView;
+			sourceTree = "<group>";
+		};
+		D7954B7D2068ABCD00F55F49 /* GalleryController */ = {
+			isa = PBXGroup;
+			children = (
+				D7954B7E2068ABEA00F55F49 /* GalleryController.swift */,
+			);
+			path = GalleryController;
 			sourceTree = "<group>";
 		};
 		D7959E6F205C28C5009EC609 /* PhotoLibraryCollectCell */ = {
@@ -709,6 +748,7 @@
 				D744B6AD205805DD008AEE83 /* DetailsRestaurantView.xib in Resources */,
 				D7557C6520556E8200641DEB /* ImageRestaurantView.xib in Resources */,
 				D748EA6A2045C1E900C80F9E /* Main.storyboard in Resources */,
+				D7954B782068A90000F55F49 /* GalleryView.xib in Resources */,
 				D747FB212045110F002EFC4F /* RestaurantCard.xib in Resources */,
 				D72F10F32042D4F80027A319 /* Assets.xcassets in Resources */,
 				D744B6C1205827D2008AEE83 /* BlockNameRestaurantView.xib in Resources */,
@@ -903,7 +943,9 @@
 				D727E111206003C800561AF9 /* RecentViewedRestaurantListController.swift in Sources */,
 				D72F113D2042D8F10027A319 /* RestaurantDetailController.swift in Sources */,
 				D753737D2058D65F00FA7772 /* HeaderRestaurantView.swift in Sources */,
+				D7954B7C2068A92A00F55F49 /* BaseUIView.swift in Sources */,
 				D744B6BE205827C3008AEE83 /* BlockNameRestaurantView.swift in Sources */,
+				D7954B7A2068A90E00F55F49 /* GalleryView.swift in Sources */,
 				D744B6B9205817BF008AEE83 /* BlockListImageSquardView.swift in Sources */,
 				D782BEE0205F715000EF77EC /* ReviewsManagerController.swift in Sources */,
 				D747FB262045349A002EFC4F /* BlockListRestaurantCard.swift in Sources */,
@@ -917,8 +959,10 @@
 				D72F112C2042D7510027A319 /* AppConfig.swift in Sources */,
 				D72F11302042D75D0027A319 /* Extensions.swift in Sources */,
 				D747FB1F204510FB002EFC4F /* RestaurantCard.swift in Sources */,
+				D7954B7F2068ABEA00F55F49 /* GalleryController.swift in Sources */,
 				D753737A2058D5DA00FA7772 /* WriteReviewController.swift in Sources */,
 				D744B6C320582A5F008AEE83 /* OtherRestaurantsView.swift in Sources */,
+				D74FA0F12069EC9700E18E04 /* PhotosManagerController.swift in Sources */,
 				D782BEE3205F7AE200EF77EC /* ReviewsListController.swift in Sources */,
 				D72F11382042D8910027A319 /* HomeController.swift in Sources */,
 				D72F11252042D74A0027A319 /* ConfigManager.swift in Sources */,
