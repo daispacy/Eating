@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,23 +27,34 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNn-BO-hmN">
                             <rect key="frame" x="0.0" y="40.5" width="355" height="40"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ub4-AI-Jp7">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVl-PX-8a6">
                                     <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="CALL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R08-B2-Qp1">
-                                            <rect key="frame" x="0.0" y="0.0" width="315" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-9f-u81">
-                                            <rect key="frame" x="0.0" y="20.5" width="315" height="19.5"/>
-                                            <state key="normal" title="0938 388 208">
-                                                <color key="titleColor" red="0.0" green="0.0" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ub4-AI-Jp7">
+                                            <rect key="frame" x="0.0" y="-0.5" width="315" height="54.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R08-B2-Qp1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="315" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-9f-u81">
+                                                    <rect key="frame" x="0.0" y="20.5" width="315" height="34"/>
+                                                    <state key="normal" title="0938 388 208">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
-                                </stackView>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="ub4-AI-Jp7" firstAttribute="leading" secondItem="RVl-PX-8a6" secondAttribute="leading" id="ae1-fp-1gI"/>
+                                        <constraint firstItem="ub4-AI-Jp7" firstAttribute="top" secondItem="RVl-PX-8a6" secondAttribute="top" id="oWS-ra-Qyz"/>
+                                        <constraint firstAttribute="trailing" secondItem="ub4-AI-Jp7" secondAttribute="trailing" id="q3h-Fw-YNc"/>
+                                    </constraints>
+                                </view>
                                 <button opaque="NO" contentMode="center" horizontalHuggingPriority="1" verticalHuggingPriority="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aC6-a2-xuz">
                                     <rect key="frame" x="315" y="0.0" width="40" height="40"/>
                                     <constraints>
@@ -53,30 +64,49 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7N-dx-kCh">
-                            <rect key="frame" x="0.0" y="100.5" width="355" height="68.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7N-dx-kCh">
+                            <rect key="frame" x="0.0" y="100.5" width="355" height="60"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-fZ-eQI">
-                                    <rect key="frame" x="0.0" y="0.0" width="355" height="68.5"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbd-a6-AfM">
+                                    <rect key="frame" x="0.0" y="0.0" width="295" height="60"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfU-W9-2ba">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="1114 ww.Randolph Street, Chicago 60607" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBJ-in-TPy">
-                                            <rect key="frame" x="0.0" y="25.5" width="355" height="43"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-fZ-eQI">
+                                            <rect key="frame" x="0.0" y="-0.5" width="295" height="46"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfU-W9-2ba">
+                                                    <rect key="frame" x="0.0" y="0.0" width="295" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="1114 ww.Randolph Street, Chicago 60607" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBJ-in-TPy">
+                                                    <rect key="frame" x="0.0" y="25.5" width="295" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
-                                </stackView>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="7sH-fZ-eQI" firstAttribute="top" secondItem="sbd-a6-AfM" secondAttribute="top" id="EYO-Hf-2C2"/>
+                                        <constraint firstItem="7sH-fZ-eQI" firstAttribute="leading" secondItem="sbd-a6-AfM" secondAttribute="leading" id="JGj-lc-blC"/>
+                                        <constraint firstAttribute="trailing" secondItem="7sH-fZ-eQI" secondAttribute="trailing" id="Uxl-SN-MoR"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4k-90-1fY">
+                                    <rect key="frame" x="295" y="0.0" width="60" height="60"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="84q-HS-4Rl"/>
+                                        <constraint firstAttribute="width" constant="60" id="svr-TA-ceb"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui7-dz-jay">
-                            <rect key="frame" x="0.0" y="189" width="355" height="34"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui7-dz-jay">
+                            <rect key="frame" x="0.0" y="180.5" width="355" height="42.5"/>
                             <state key="normal" title="Directions">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -100,6 +130,7 @@
                 <outlet property="lblCall" destination="R08-B2-Qp1" id="2pB-0p-oZe"/>
                 <outlet property="lblTextAdress" destination="TfU-W9-2ba" id="y8M-V2-egV"/>
                 <outlet property="lblTitle" destination="yVh-fg-KKP" id="tZ7-Cy-Yco"/>
+                <outlet property="vwMap" destination="k4k-90-1fY" id="9u7-cV-U6h"/>
             </connections>
             <point key="canvasLocation" x="159.5" y="-104.5"/>
         </view>

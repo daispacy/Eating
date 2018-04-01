@@ -24,6 +24,9 @@ class BasePresentController: BaseController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.providesPresentationContextTransitionStyle = true
+        self.definesPresentationContext = true
+        self.modalPresentationStyle=UIModalPresentationStyle.overCurrentContext
     }
     
     override func viewDidLoad() {

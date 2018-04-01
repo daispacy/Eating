@@ -65,6 +65,7 @@ class BlockNameRestaurantView: UIView {
         super.init(coder: aDecoder)
         loadNib()
         config()
+        loadFakeData()
     }
     
     // MARK: - closures

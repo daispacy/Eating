@@ -21,6 +21,7 @@ class BaseController: UIViewController {
     var btnNotification:UIButton!
     var btnSearch:UIButton!
     var btnBack:UIButton!
+    var floatView:FloatView!
     
     // MARK: - override
     func layout() {}
@@ -42,17 +43,38 @@ class BaseController: UIViewController {
                 item.title = ""
             }
         }
+        
+        if floatView != nil {
+            view.bringSubview(toFront: floatView)
+        }
     }
     
     deinit {
         #if DEBUG
             print("\(self.description) dealloc")
         #endif
-		
-		NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "UpdateButtonProfile"), object: nil)
     }
 
     // MARK: - interface
+    func showFloatView() {
+        if floatView == nil {
+            floatView = FloatView(frame:CGRect(x: 50, y: 100, width: 50, height: 50))
+            floatView.controller = self
+            view.addSubview(floatView)
+            view.bringSubview(toFront: floatView)
+            floatView.translatesAutoresizingMaskIntoConstraints = false
+            floatView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            floatView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            floatView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+            if #available(iOS 11.0, *) {
+                floatView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+            } else {
+                floatView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
+            }
+            
+        }
+    }
+    
     func addDefaultMenu () {
         
         let widthAvatar = CGFloat(40)
@@ -124,7 +146,7 @@ class BaseController: UIViewController {
         self.navigationItem.rightBarButtonItems  = [itemNotification,itemSearch]
     }
     
-    // MARK: - private
+    // MARK: - action
     @objc func menuPress(sender:UIButton) {
         
         if sender.isEqual(btnProfile) {
@@ -145,14 +167,4 @@ class BaseController: UIViewController {
 //            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
-	@objc func updateBtnProfile() {
-//        guard let imageView = btnProfile.viewWithTag(1111) as? UIImageView,
-//            let acc = Account.current else {
-//
-//            return
-//        }
-		
-//        imageView.loadImageUsingCacheWithURLString(acc.avatar, size: nil, placeHolder: nil, false)
-	}
 }

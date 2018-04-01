@@ -37,6 +37,33 @@ class DetailsRestaurantView: UIView {
         
         btnDirection.titleLabel?.font = UIFont.boldSystemFont(ofSize: fontSize15)
         btnDirection.setTitleColor(#colorLiteral(red: 0.05098039216, green: 0.6392156863, blue: 0.07843137255, alpha: 1), for: UIControlState())
+        
+        vwMap.isUserInteractionEnabled = true
+        mapController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "mapController") as! MapController
+        mapController.type = .lite
+        controller?.addChildViewController(mapController)
+        vwMap.addSubview(mapController.view)
+        mapController.didMove(toParentViewController: controller)
+        mapController.view.fullConstraintWithParent()
+        vwMap.addEvent {[weak self] in
+            guard let _self = self else {return}
+            _self.mapController.removeFromParentViewController()
+            _self.mapController.view.removeFromSuperview()
+            let vc = ContainerMapController()
+            vc.mapController = _self.mapController
+            _self.controller?.navigationController?.pushViewController(vc, animated: true)
+            vc.onBack = {[weak _self] mapVC in
+                guard let _self = _self, let mapVC = mapVC else {return}
+                mapVC.removeFromParentViewController()
+                mapVC.view.removeFromSuperview()
+                _self.mapController = mapVC
+                _self.mapController.type = .lite
+                _self.controller?.addChildViewController(_self.mapController)
+                _self.vwMap.addSubview(_self.mapController.view)
+                _self.mapController.view.fullConstraintWithParent()
+                _self.mapController.didMove(toParentViewController: _self.controller)
+            }
+        }
     }
     
     // MARK: - init
@@ -49,6 +76,8 @@ class DetailsRestaurantView: UIView {
     // MARK: - closures
     
     // MARK: - properties
+    var mapController:MapController!
+    weak var controller:UIViewController?
     
     // MARK: - outlet
     @IBOutlet weak var lblTitle: UILabel!
@@ -58,5 +87,6 @@ class DetailsRestaurantView: UIView {
     @IBOutlet weak var lblTextAdress: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var btnDirection: UIButton!
+    @IBOutlet weak var vwMap: UIView!
     
 }

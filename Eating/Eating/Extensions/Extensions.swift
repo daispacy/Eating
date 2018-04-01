@@ -633,6 +633,31 @@ private var CLOSEBUTTON:String = "CloseBUTTON"
 private var CHECKBAG:String = "CHECKBAG"
 extension UIView {
     
+    func fullConstraintWithParent() {
+        if self.superview == nil {return}
+        self.translatesAutoresizingMaskIntoConstraints = false
+        topAnchor.constraint(equalTo: self.superview!.topAnchor, constant: 0).isActive = true
+        trailingAnchor.constraint(equalTo: self.superview!.trailingAnchor, constant: 0).isActive = true
+        bottomAnchor.constraint(equalTo: self.superview!.bottomAnchor, constant: 0).isActive = true
+        leadingAnchor.constraint(equalTo: self.superview!.leadingAnchor, constant: 0).isActive = true
+    }
+    
+    func asCircle() {
+        self.layer.cornerRadius = self.frame.width / 2;
+        self.layer.masksToBounds = true
+    }
+    
+    func setTintColor(_ color: UIColor, recursive: Bool) {
+        if recursive {
+            tintColor = color
+            for view in subviews {
+                view.setTintColor(color, recursive: true)
+            }
+        } else {
+            tintColor = color
+        }
+    }
+    
     var singleTap:UITapGestureRecognizer {
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.tapDetected(_:)))
 //        singleTap.numberOfTapsRequired = 1 // you can change this value

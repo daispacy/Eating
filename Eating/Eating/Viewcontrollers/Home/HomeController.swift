@@ -31,6 +31,8 @@ class HomeController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       vwHeaderMenu.isShowButtonBack = false
+        vwHeaderMenu.controller = self
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.delegate = self
         searchBar.placeholder = "Tìm kiếm món ăn, nước uống hoặc nhà hàng"
@@ -49,6 +51,11 @@ class HomeController: BaseController {
         loadFakeData()
         
         tableSearch.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showFloatView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +77,7 @@ class HomeController: BaseController {
     @IBOutlet weak var stackBlocks: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableSearch: UITableView!
+    @IBOutlet weak var vwHeaderMenu: HeaderPresentControllerView!
 }
 
 // MARK: - search delegate

@@ -37,6 +37,7 @@ class RestaurantDetailController: BaseController {
 
         // add details restaurant view
         detailsRestaurant = Bundle.main.loadNibNamed("DetailsRestaurantView", owner: self, options: nil)?.first as! DetailsRestaurantView
+        detailsRestaurant.controller = self
         stackContainer.addArrangedSubview(detailsRestaurant)
 
         // add reviews restaurant view
