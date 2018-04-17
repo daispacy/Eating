@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		30BDE71812CA02ECD745C87A /* Pods_Eating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8232E35408EDFE5128610624 /* Pods_Eating.framework */; };
 		3E73B5733025CC609B734719 /* Pods_EatingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E39A5108C80303F5BC0AF0 /* Pods_EatingUITests.framework */; };
+		D7106AF42084D2B00066B72F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7106AF32084D2B00066B72F /* Employee.swift */; };
+		D7106AF62084E8A50066B72F /* SysAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7106AF52084E8A50066B72F /* SysAccount.swift */; };
+		D7106AF82084EBD60066B72F /* CustomerAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7106AF72084EBD60066B72F /* CustomerAccount.swift */; };
+		D7106AFA2084EC2D0066B72F /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7106AF92084EC2D0066B72F /* CustomerInfo.swift */; };
+		D7106AFC2084ED6E0066B72F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7106AFB2084ED6E0066B72F /* Store.swift */; };
+		D7106AFE2084F1F90066B72F /* StoreAttachmentFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7106AFD2084F1F90066B72F /* StoreAttachmentFile.swift */; };
 		D727E111206003C800561AF9 /* RecentViewedRestaurantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D727E10F206003C800561AF9 /* RecentViewedRestaurantListController.swift */; };
 		D727E112206003C800561AF9 /* RecentViewedRestaurantListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D727E110206003C800561AF9 /* RecentViewedRestaurantListController.xib */; };
 		D729D6B4206FC181005B15C3 /* ContainerMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729D6B3206FC181005B15C3 /* ContainerMapController.swift */; };
@@ -89,6 +95,16 @@
 		D79ABCE1206C003100719BC7 /* FloatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79ABCE0206C003100719BC7 /* FloatView.xib */; };
 		D7C66EB5205506D9003C3022 /* MenuRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C66EB4205506D9003C3022 /* MenuRestaurantView.swift */; };
 		D7C66EB7205506E2003C3022 /* MenuRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C66EB6205506E2003C3022 /* MenuRestaurantView.xib */; };
+		D7E40ACC2085A2E10000FB1B /* StoreOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40ACB2085A2E10000FB1B /* StoreOwner.swift */; };
+		D7E40ACE2085A4D50000FB1B /* StoreAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40ACD2085A4D50000FB1B /* StoreAccount.swift */; };
+		D7E40AD02085A5BE0000FB1B /* StoreEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40ACF2085A5BE0000FB1B /* StoreEvent.swift */; };
+		D7E40AD22085A70C0000FB1B /* StoreAdvertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40AD12085A70C0000FB1B /* StoreAdvertise.swift */; };
+		D7E40AD42085A7F30000FB1B /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40AD32085A7F30000FB1B /* ProductCategory.swift */; };
+		D7E40AD62085A8630000FB1B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40AD52085A8630000FB1B /* Product.swift */; };
+		D7E40AD82085A9910000FB1B /* ProductAttachmentFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40AD72085A9910000FB1B /* ProductAttachmentFile.swift */; };
+		D7E40ADA2085ACD90000FB1B /* OrderMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40AD92085ACD90000FB1B /* OrderMaster.swift */; };
+		D7E40ADC2085AF710000FB1B /* OrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40ADB2085AF710000FB1B /* OrderDetail.swift */; };
+		D7E40ADE2085B0850000FB1B /* Shipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E40ADD2085B0850000FB1B /* Shipper.swift */; };
 		EFC90C2B88B8EEE58DAE910E /* Pods_EatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0A430242BC802F75EAB5F1 /* Pods_EatingTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +133,12 @@
 		7F447D17668A2F28198EB43F /* Pods-EatingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatingUITests/Pods-EatingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8232E35408EDFE5128610624 /* Pods_Eating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD8B2C3961C10CDE0516763 /* Pods-Eating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eating.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eating/Pods-Eating.release.xcconfig"; sourceTree = "<group>"; };
+		D7106AF32084D2B00066B72F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		D7106AF52084E8A50066B72F /* SysAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysAccount.swift; sourceTree = "<group>"; };
+		D7106AF72084EBD60066B72F /* CustomerAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerAccount.swift; sourceTree = "<group>"; };
+		D7106AF92084EC2D0066B72F /* CustomerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
+		D7106AFB2084ED6E0066B72F /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D7106AFD2084F1F90066B72F /* StoreAttachmentFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreAttachmentFile.swift; sourceTree = "<group>"; };
 		D727E10F206003C800561AF9 /* RecentViewedRestaurantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewedRestaurantListController.swift; sourceTree = "<group>"; };
 		D727E110206003C800561AF9 /* RecentViewedRestaurantListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentViewedRestaurantListController.xib; sourceTree = "<group>"; };
 		D729D6B3206FC181005B15C3 /* ContainerMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerMapController.swift; sourceTree = "<group>"; };
@@ -203,6 +225,16 @@
 		D79ABCE0206C003100719BC7 /* FloatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloatView.xib; sourceTree = "<group>"; };
 		D7C66EB4205506D9003C3022 /* MenuRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRestaurantView.swift; sourceTree = "<group>"; };
 		D7C66EB6205506E2003C3022 /* MenuRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuRestaurantView.xib; sourceTree = "<group>"; };
+		D7E40ACB2085A2E10000FB1B /* StoreOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreOwner.swift; sourceTree = "<group>"; };
+		D7E40ACD2085A4D50000FB1B /* StoreAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreAccount.swift; sourceTree = "<group>"; };
+		D7E40ACF2085A5BE0000FB1B /* StoreEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreEvent.swift; sourceTree = "<group>"; };
+		D7E40AD12085A70C0000FB1B /* StoreAdvertise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreAdvertise.swift; sourceTree = "<group>"; };
+		D7E40AD32085A7F30000FB1B /* ProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
+		D7E40AD52085A8630000FB1B /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D7E40AD72085A9910000FB1B /* ProductAttachmentFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAttachmentFile.swift; sourceTree = "<group>"; };
+		D7E40AD92085ACD90000FB1B /* OrderMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderMaster.swift; sourceTree = "<group>"; };
+		D7E40ADB2085AF710000FB1B /* OrderDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetail.swift; sourceTree = "<group>"; };
+		D7E40ADD2085B0850000FB1B /* Shipper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shipper.swift; sourceTree = "<group>"; };
 		F6191E4351B825CC0171A148 /* Pods-EatingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatingTests/Pods-EatingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF7B36BFB14705DD9C7FB737 /* Pods-Eating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eating.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eating/Pods-Eating.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -367,6 +399,22 @@
 		D72F111C2042D6430027A319 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				D7106AF32084D2B00066B72F /* Employee.swift */,
+				D7E40ADD2085B0850000FB1B /* Shipper.swift */,
+				D7106AF92084EC2D0066B72F /* CustomerInfo.swift */,
+				D7E40ACF2085A5BE0000FB1B /* StoreEvent.swift */,
+				D7E40ADB2085AF710000FB1B /* OrderDetail.swift */,
+				D7E40AD12085A70C0000FB1B /* StoreAdvertise.swift */,
+				D7E40AD52085A8630000FB1B /* Product.swift */,
+				D7E40AD32085A7F30000FB1B /* ProductCategory.swift */,
+				D7E40ACD2085A4D50000FB1B /* StoreAccount.swift */,
+				D7E40ACB2085A2E10000FB1B /* StoreOwner.swift */,
+				D7106AFB2084ED6E0066B72F /* Store.swift */,
+				D7106AF52084E8A50066B72F /* SysAccount.swift */,
+				D7106AFD2084F1F90066B72F /* StoreAttachmentFile.swift */,
+				D7E40AD72085A9910000FB1B /* ProductAttachmentFile.swift */,
+				D7E40AD92085ACD90000FB1B /* OrderMaster.swift */,
+				D7106AF72084EBD60066B72F /* CustomerAccount.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -980,20 +1028,28 @@
 				D729DD7A2070A092004DA466 /* PlusReviewController.swift in Sources */,
 				D75373822058D93200FA7772 /* HeaderPresentControllerView.swift in Sources */,
 				D72F11272042D74A0027A319 /* Server.swift in Sources */,
+				D7106AFC2084ED6E0066B72F /* Store.swift in Sources */,
 				D782BEDB205F649500EF77EC /* TabbarMenuSlider.swift in Sources */,
 				D727E111206003C800561AF9 /* RecentViewedRestaurantListController.swift in Sources */,
 				D72F113D2042D8F10027A319 /* RestaurantDetailController.swift in Sources */,
+				D7106AFA2084EC2D0066B72F /* CustomerInfo.swift in Sources */,
 				D753737D2058D65F00FA7772 /* HeaderRestaurantView.swift in Sources */,
 				D7954B7C2068A92A00F55F49 /* BaseUIView.swift in Sources */,
+				D7106AFE2084F1F90066B72F /* StoreAttachmentFile.swift in Sources */,
 				D744B6BE205827C3008AEE83 /* BlockNameRestaurantView.swift in Sources */,
 				D7954B7A2068A90E00F55F49 /* GalleryView.swift in Sources */,
+				D7E40ACE2085A4D50000FB1B /* StoreAccount.swift in Sources */,
 				D744B6B9205817BF008AEE83 /* BlockListImageSquardView.swift in Sources */,
 				D782BEE0205F715000EF77EC /* ReviewsManagerController.swift in Sources */,
 				D79ABCDF206BFFD800719BC7 /* FloatView.swift in Sources */,
+				D7E40AD22085A70C0000FB1B /* StoreAdvertise.swift in Sources */,
 				D747FB262045349A002EFC4F /* BlockListRestaurantCard.swift in Sources */,
 				D76F893B20545052000B3EFC /* RateRestaurantView.swift in Sources */,
+				D7E40AD82085A9910000FB1B /* ProductAttachmentFile.swift in Sources */,
 				D76F89372053D583000B3EFC /* InformationCommonRestaurantView.swift in Sources */,
+				D7E40ACC2085A2E10000FB1B /* StoreOwner.swift in Sources */,
 				D72F10EC2042D4F80027A319 /* AppDelegate.swift in Sources */,
+				D7106AF62084E8A50066B72F /* SysAccount.swift in Sources */,
 				D72F112D2042D7510027A319 /* Constant.swift in Sources */,
 				D748EA702045C5C300C80F9E /* ProfileController.swift in Sources */,
 				D7557C6420556E8200641DEB /* ImageRestaurantView.swift in Sources */,
@@ -1005,12 +1061,15 @@
 				D7954B7F2068ABEA00F55F49 /* GalleryController.swift in Sources */,
 				D753737A2058D5DA00FA7772 /* WriteReviewController.swift in Sources */,
 				D744B6C320582A5F008AEE83 /* OtherRestaurantsView.swift in Sources */,
+				D7E40ADA2085ACD90000FB1B /* OrderMaster.swift in Sources */,
 				D74FA0F12069EC9700E18E04 /* PhotosManagerController.swift in Sources */,
 				D729D6B4206FC181005B15C3 /* ContainerMapController.swift in Sources */,
 				D782BEE3205F7AE200EF77EC /* ReviewsListController.swift in Sources */,
 				D72F11382042D8910027A319 /* HomeController.swift in Sources */,
 				D72F11252042D74A0027A319 /* ConfigManager.swift in Sources */,
 				D748EA6520459C5C00C80F9E /* RestaurantCellSearch.swift in Sources */,
+				D7E40AD02085A5BE0000FB1B /* StoreEvent.swift in Sources */,
+				D7106AF82084EBD60066B72F /* CustomerAccount.swift in Sources */,
 				D782BEE8205F941F00EF77EC /* ReviewsListCell.swift in Sources */,
 				D72F11262042D74A0027A319 /* CoreDataStack.swift in Sources */,
 				D7557C692055816900641DEB /* MapController.swift in Sources */,
@@ -1018,10 +1077,15 @@
 				D74B3D17205ADF0F008B8E72 /* AddPhotosView.swift in Sources */,
 				D74B3D14205AB976008B8E72 /* PhotosLibraryController.swift in Sources */,
 				D744B6B4205812E1008AEE83 /* BlockReviewView.swift in Sources */,
+				D7E40AD62085A8630000FB1B /* Product.swift in Sources */,
 				D72F11342042D87E0027A319 /* BaseController.swift in Sources */,
 				D77CE6C620470B72004027A9 /* SlideImageView.swift in Sources */,
+				D7106AF42084D2B00066B72F /* Employee.swift in Sources */,
 				D7C66EB5205506D9003C3022 /* MenuRestaurantView.swift in Sources */,
 				D744B6AF20580F18008AEE83 /* ReviewsRestaurantView.swift in Sources */,
+				D7E40AD42085A7F30000FB1B /* ProductCategory.swift in Sources */,
+				D7E40ADC2085AF710000FB1B /* OrderDetail.swift in Sources */,
+				D7E40ADE2085B0850000FB1B /* Shipper.swift in Sources */,
 				D72F11352042D87E0027A319 /* BasePresentController.swift in Sources */,
 				D744B6AB205805D5008AEE83 /* DetailsRestaurantView.swift in Sources */,
 				D72F112E2042D7510027A319 /* Support.swift in Sources */,
