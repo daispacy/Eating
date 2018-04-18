@@ -14,6 +14,9 @@ class RestaurantDetailController: BaseController {
     
     // MARK: - private
     private func config() {
+        
+        scrollView.delegate = self
+        
         // add InformationCommonRestaurantView
         informationCommonView = Bundle.main.loadNibNamed("InformationCommonRestaurantView", owner: self, options: nil)?.first as! InformationCommonRestaurantView
         stackContainer.addArrangedSubview(informationCommonView)
@@ -87,6 +90,7 @@ class RestaurantDetailController: BaseController {
     // MARK: - outlet
     @IBOutlet weak var slideImageView: SlideImageView!
     @IBOutlet weak var stackContainer: UIStackView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
 }
 
@@ -109,5 +113,14 @@ extension RestaurantDetailController:OtherRestaurantsViewDelegate {
         otherRestaurant.controller = self
         otherRestaurant.delegate = self
         stackContainer.addArrangedSubview(rateRestaurantView)
+    }
+}
+
+// MARK: -
+extension RestaurantDetailController:UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y == -20 {
+            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        }
     }
 }

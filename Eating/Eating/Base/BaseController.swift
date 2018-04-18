@@ -163,8 +163,6 @@ class BaseController: UIViewController {
             }
         } else if sender.isEqual(btnSearch) {
             return
-//            let vc = QRScanController(nibName: "QRScanController", bundle: Bundle.main)
-//            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

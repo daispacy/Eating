@@ -37,7 +37,7 @@ class RecentViewedRestaurantListController: BaseController {
     
     // MARK: - outlet
     @IBOutlet weak var otherRestaurantView: OtherRestaurantsView!
-    @IBOutlet weak var menuHeader: HeaderPresentControllerView!
+    @IBOutlet weak var menuHeader: NavigationCustomView!
     @IBOutlet weak var scrollView: UIScrollView!
     
 }

@@ -181,7 +181,7 @@ class WriteReviewController: BasePresentController {
     
     @IBOutlet weak var headerRestaurantView: HeaderRestaurantView!
     @IBOutlet weak var photoView: AddPhotosView!
-    @IBOutlet weak var vwHeader: HeaderPresentControllerView!
+    @IBOutlet weak var vwHeader: NavigationCustomView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackContainer: UIStackView!
     @IBOutlet weak var stackRates: UIStackView!

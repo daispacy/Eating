@@ -58,6 +58,12 @@ class PlusReviewController: BasePresentController {
         addActionButton(btnClose)
         addActionButton(btnAddPhoto)
         addActionButton(btnReview)
+        
+        _ = vwHeader.constraints.map{
+            if $0.firstAttribute == .height {
+                $0.constant = 54 + UIApplication.shared.statusBarFrame.size.height
+            }
+        }
     }
     
     private func addActionButton(_ sender:UIButton) {
@@ -142,5 +148,6 @@ class PlusReviewController: BasePresentController {
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var vwActionReview: UIView!
     @IBOutlet weak var vwActionAddPhoto: UIView!
+    @IBOutlet weak var vwHeader: UIView!
     
 }

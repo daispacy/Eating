@@ -77,7 +77,7 @@ class HomeController: BaseController {
     @IBOutlet weak var stackBlocks: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableSearch: UITableView!
-    @IBOutlet weak var vwHeaderMenu: HeaderPresentControllerView!
+    @IBOutlet weak var vwHeaderMenu: NavigationCustomView!
 }
 
 // MARK: - search delegate

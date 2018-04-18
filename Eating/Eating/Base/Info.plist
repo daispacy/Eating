@@ -69,5 +69,7 @@
 	<string>$(PRODUCT_NAME)  need Usage Photo</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>

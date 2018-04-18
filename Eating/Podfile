@@ -6,6 +6,8 @@ target 'Eating' do
   use_frameworks!
   pod 'Alamofire', '= 4.5.1'
   pod 'Localize-Swift', '= 2.0'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
   # Pods for Eating
 
   target 'EatingTests' do

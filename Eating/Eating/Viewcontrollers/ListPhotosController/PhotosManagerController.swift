@@ -61,7 +61,7 @@ class PhotosManagerController: BaseController {
     
     // MARK: - outlet
     @IBOutlet weak var vwHeaderRestaurantView: HeaderRestaurantView!
-    @IBOutlet weak var vwHeader: HeaderPresentControllerView!
+    @IBOutlet weak var vwHeader: NavigationCustomView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackContainer: UIStackView!
     @IBOutlet weak var tabbarMenuSlide: TabbarMenuSlider!

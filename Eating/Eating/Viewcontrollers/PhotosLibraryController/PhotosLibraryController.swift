@@ -112,7 +112,7 @@ class PhotosLibraryController: BasePresentController, UINavigationControllerDele
     var type:PhotosLibraryControllerType = .select
     
     // MARK: - outlet
-    @IBOutlet weak var menuView: HeaderPresentControllerView!
+    @IBOutlet weak var menuView: NavigationCustomView!
     @IBOutlet weak var collectView: UICollectionView!
     @IBOutlet weak var stackContainer: UIStackView!
     
