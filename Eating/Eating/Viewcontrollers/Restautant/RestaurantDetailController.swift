@@ -28,12 +28,12 @@ class RestaurantDetailController: BaseController {
         stackContainer.addArrangedSubview(rateRestaurantView)
         
         // add menu restaurant view
-        menuRestaurant = Bundle.main.loadNibNamed("MenuRestaurantView", owner: self, options: nil)?.first as! MenuRestaurantView
+        menuRestaurant = Bundle.main.loadNibNamed("MenuPhotoRestaurantView", owner: self, options: nil)?.first as! MenuPhotoRestaurantView
         stackContainer.addArrangedSubview(menuRestaurant)
         menuRestaurant.loadFakeImages()
 
         // add menu restaurant view
-        imageRestaurant = Bundle.main.loadNibNamed("ImageRestaurantView", owner: self, options: nil)?.first as! ImageRestaurantView
+        imageRestaurant = Bundle.main.loadNibNamed("GalleryRestaurantView", owner: self, options: nil)?.first as! GalleryRestaurantView
         imageRestaurant.controller = self
         stackContainer.addArrangedSubview(imageRestaurant)
         imageRestaurant.loadFakeImages()
@@ -81,8 +81,8 @@ class RestaurantDetailController: BaseController {
     var blurView: UIVisualEffectView!
     var informationCommonView:InformationCommonRestaurantView! // load name, address, openhours of restaurant
     var rateRestaurantView:RateRestaurantView! // load rate restaurant
-    var menuRestaurant:MenuRestaurantView! // load menus image restaurant
-    var imageRestaurant:ImageRestaurantView! // load photos restaurant
+    var menuRestaurant:MenuPhotoRestaurantView! // load menus image restaurant
+    var imageRestaurant:GalleryRestaurantView! // load photos restaurant
     var detailsRestaurant:DetailsRestaurantView! // load details restaurant
     var reviewsRestaurant:ReviewsRestaurantView! // load reviews restaurant
     var otherRestaurant:OtherRestaurantsView! // load other restaurants

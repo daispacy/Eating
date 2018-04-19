@@ -11,7 +11,7 @@ import UIKit
 fileprivate let numberItems:CGFloat = UI_USER_INTERFACE_IDIOM() == .pad ? 8 : 4
 fileprivate let spacing:CGFloat = 10
 
-class ImageRestaurantView: UIView {
+class GalleryRestaurantView: UIView {
 
     // MARK: - api
     

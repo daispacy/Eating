@@ -38,7 +38,7 @@ class PlusReviewController: BasePresentController {
     // MARK: - private
     private func config() {
         
-        self.vwContainer.transform = CGAffineTransform(translationX: 0, y: -self.vwContainer.frame.size.height - 60)
+//        self.vwContainer.transform = CGAffineTransform(translationX: 0, y: -self.vwContainer.frame.size.height - 60)
         self.vwBlur.backgroundColor = UIColor.clear
         
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchVWBG(_:)))
@@ -64,6 +64,7 @@ class PlusReviewController: BasePresentController {
                 $0.constant = 54 + UIApplication.shared.statusBarFrame.size.height
             }
         }
+        self.topConstraintVwContainer.constant = -self.vwContainer.frame.maxY
     }
     
     private func addActionButton(_ sender:UIButton) {
@@ -71,49 +72,17 @@ class PlusReviewController: BasePresentController {
     }
     
     private func startAnimationShow(isShow:Bool,_ completion:(()->Void)? = nil) {
-        if isShow {
-            self.vwActionAddPhoto.alpha = 0
-            self.vwActionReview.alpha = 0
-            self.vwInforRestaurant.alpha = 0
-        }
-        let options: UIViewKeyframeAnimationOptions = [.curveEaseInOut]
-        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: options, animations: {
-            
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
-                self.btnClose.transform = isShow ? CGAffineTransform(rotationAngle: 22.5 * (180 / CGFloat.pi)) : .identity
-            })
-            
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5 , animations: {
-                self.vwContainer.transform = isShow ? .identity : CGAffineTransform(translationX: 0, y: -self.vwContainer.frame.size.height - 60)
-            })
-            
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25, animations: {
-                self.vwBlur.backgroundColor = isShow ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6047260123) : UIColor.clear
-            })
-            if isShow {
-                UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.1, animations: {
-                    self.vwActionAddPhoto.alpha = isShow ? 1 : 0
-                })
-                UIView.addKeyframe(withRelativeStartTime: 0.35, relativeDuration: 0.1, animations: {
-                    self.vwActionReview.alpha = isShow ? 1 : 0
-                })
-                UIView.addKeyframe(withRelativeStartTime: 0.45, relativeDuration: 0.1, animations: {
-                    self.vwInforRestaurant.alpha = isShow ? 1 : 0
-                })
-            } else {
-                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.01, animations: {
-                    self.vwInforRestaurant.alpha = isShow ? 1 : 0
-                })
-                UIView.addKeyframe(withRelativeStartTime: 0.01, relativeDuration: 0.1, animations: {
-                    self.vwActionReview.alpha = isShow ? 1 : 0
-                })
-                UIView.addKeyframe(withRelativeStartTime: 0.101 , relativeDuration: 0.1, animations: {
-                    self.vwActionAddPhoto.alpha = isShow ? 1 : 0
-                })
-            }
-        }, completion: { done in
+        self.vwBlur.bringSubview(toFront: self.vwHeader)
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
+            self.btnClose.transform = isShow ? CGAffineTransform(rotationAngle: 22.5 * (180 / CGFloat.pi)) : .identity
+            self.topConstraintVwContainer.constant = isShow ? 0 : -self.vwContainer.frame.maxY
+            self.view.layoutIfNeeded()
+        }) { (done) in
             if done {completion?()}
-        })
+        }
+        UIView.animate(withDuration: 0.2, delay: isShow ? 0.15 : 0, options: [.curveEaseInOut,.allowUserInteraction], animations: {
+            self.vwBlur.backgroundColor = isShow ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6047260123) : UIColor.clear
+        },completion:nil)
     }
     
     // MARK: - init
@@ -150,4 +119,5 @@ class PlusReviewController: BasePresentController {
     @IBOutlet weak var vwActionAddPhoto: UIView!
     @IBOutlet weak var vwHeader: UIView!
     
+    @IBOutlet weak var topConstraintVwContainer: NSLayoutConstraint!
 }
