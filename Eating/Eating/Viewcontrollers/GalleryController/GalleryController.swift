@@ -77,6 +77,8 @@ class GalleryController: BasePresentController {
         super.viewDidLoad()
         
         config()
+        
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,8 +91,8 @@ class GalleryController: BasePresentController {
             self.view.frame = UIScreen.main.bounds
         }, completion: nil)
         
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
-            self.view.backgroundColor = UIColor.black
+        UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveEaseInOut, animations: {
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(1)
         }, completion: nil)
     }
     

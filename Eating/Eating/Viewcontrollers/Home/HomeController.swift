@@ -34,7 +34,6 @@ class HomeController: BaseController {
        vwHeaderMenu.isShowButtonBack = false
         vwHeaderMenu.controller = self
         navigationController?.setNavigationBarHidden(true, animated: false)
-        navigationController?.delegate = self
         searchBar.placeholder = "Tìm kiếm món ăn, nước uống hoặc nhà hàng"
         
         tableSearch.register(UINib(nibName: "RestaurantCellSearch", bundle: Bundle.main), forCellReuseIdentifier: "cell")
@@ -69,8 +68,8 @@ class HomeController: BaseController {
     // MARK: - closures
     
     // MARK: - properties
-    var thumbnailZoomTransitionAnimator: PushZoomTransitionAnimator?
     var transitionThumbnail: UIImageView?
+    var interactionController: UIPercentDrivenInteractiveTransition?
     
     // MARK: - outlet
     @IBOutlet weak var searchBar: UISearchBar!
@@ -145,21 +144,5 @@ extension HomeController:UIScrollViewDelegate {
                 cancelButton.isEnabled = true
             }
         }
-    }
-}
-
-// MARK: - custom transition
-extension HomeController: UINavigationControllerDelegate {
-   
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if operation == .push {
-            // Pass the thumbnail frame to the transition animator.
-            guard let transitionThumbnail = transitionThumbnail, let transitionThumbnailSuperview = transitionThumbnail.superview else { return nil }
-            thumbnailZoomTransitionAnimator = PushZoomTransitionAnimator()
-            thumbnailZoomTransitionAnimator?.thumbnailFrame = transitionThumbnailSuperview.convert(transitionThumbnail.frame, to: nil)
-        }
-        thumbnailZoomTransitionAnimator?.operation = operation
-        
-        return thumbnailZoomTransitionAnimator
     }
 }

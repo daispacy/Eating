@@ -1268,9 +1268,22 @@ extension PHAsset {
     func getImage(size:CGSize,_ completion:((UIImage?)->Void)? = nil) {
         let manager = PHImageManager.default()
         let option = PHImageRequestOptions()
+        option.isNetworkAccessAllowed = true
+        option.resizeMode = .exact
+        option.deliveryMode = .opportunistic
         option.isSynchronous = false
-        manager.requestImage(for: self, targetSize: size, contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
-            completion?(result!)
+        manager.requestImage(for: self, targetSize: size, contentMode: .aspectFill, options: option, resultHandler: {(result, info)->Void in
+            if let result = result {
+                completion?(result)
+            } else {
+                manager.requestImageData(for: self, options: option) { (data, str, orientation, info) in
+                    if let data = data {
+                        completion?(UIImage(data: data))
+                    } else {
+                        completion?(nil)
+                    }
+                }
+            }
         })
     }
     
@@ -1295,5 +1308,27 @@ extension PHAsset {
                 }
             })
         }
+    }
+}
+
+// MARK: - CollectionType
+extension CollectionType
+{
+    func safeIndex(i:Int) -> Self.Generator.Element?
+    {
+        let collectionCount = Int(self.count.toIntMax())
+        guard !self.isEmpty && collectionCount > abs(i) else
+        {
+            return nil
+        }
+        for t in self.enumerate()
+        {
+            if t.index == i
+            {
+                return t.element
+            }
+        }
+        
+        return nil
     }
 }

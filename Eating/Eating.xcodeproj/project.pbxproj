@@ -76,6 +76,8 @@
 		D75F06CB2087516A00EF1807 /* CommonListFake.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F06C72087516A00EF1807 /* CommonListFake.xib */; };
 		D75F06CC2087516A00EF1807 /* CommonFake.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F06C82087516A00EF1807 /* CommonFake.xib */; };
 		D75F06CD2087516A00EF1807 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F06C92087516A00EF1807 /* Loader.swift */; };
+		D7621C7C208AE2A20050D3AC /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7621C7B208AE2A20050D3AC /* AnimatedTransitioning.swift */; };
+		D7621C7E208AE2BE0050D3AC /* TransitionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7621C7D208AE2BE0050D3AC /* TransitionConfig.swift */; };
 		D76F89372053D583000B3EFC /* InformationCommonRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F89362053D583000B3EFC /* InformationCommonRestaurantView.swift */; };
 		D76F89392053D598000B3EFC /* InformationCommonRestaurantView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76F89382053D598000B3EFC /* InformationCommonRestaurantView.xib */; };
 		D76F893B20545052000B3EFC /* RateRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F893A20545052000B3EFC /* RateRestaurantView.swift */; };
@@ -211,6 +213,8 @@
 		D75F06C72087516A00EF1807 /* CommonListFake.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonListFake.xib; sourceTree = "<group>"; };
 		D75F06C82087516A00EF1807 /* CommonFake.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonFake.xib; sourceTree = "<group>"; };
 		D75F06C92087516A00EF1807 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		D7621C7B208AE2A20050D3AC /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
+		D7621C7D208AE2BE0050D3AC /* TransitionConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionConfig.swift; sourceTree = "<group>"; };
 		D76F89362053D583000B3EFC /* InformationCommonRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCommonRestaurantView.swift; sourceTree = "<group>"; };
 		D76F89382053D598000B3EFC /* InformationCommonRestaurantView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationCommonRestaurantView.xib; sourceTree = "<group>"; };
 		D76F893A20545052000B3EFC /* RateRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRestaurantView.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 		D72F10EA2042D4F80027A319 /* Eating */ = {
 			isa = PBXGroup;
 			children = (
+				D7621C7A208AE2290050D3AC /* Transitions */,
 				D75F06C32087515400EF1807 /* Utils */,
 				D72F111E2042D67B0027A319 /* Services */,
 				D72F111D2042D6550027A319 /* Support */,
@@ -639,6 +644,15 @@
 				D75F06C82087516A00EF1807 /* CommonFake.xib */,
 			);
 			path = XIB;
+			sourceTree = "<group>";
+		};
+		D7621C7A208AE2290050D3AC /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				D7621C7B208AE2A20050D3AC /* AnimatedTransitioning.swift */,
+				D7621C7D208AE2BE0050D3AC /* TransitionConfig.swift */,
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		D76F89352053D555000B3EFC /* Views */ = {
@@ -1096,6 +1110,7 @@
 				D7106AFA2084EC2D0066B72F /* CustomerInfo.swift in Sources */,
 				D753737D2058D65F00FA7772 /* HeaderRestaurantView.swift in Sources */,
 				D7954B7C2068A92A00F55F49 /* BaseUIView.swift in Sources */,
+				D7621C7C208AE2A20050D3AC /* AnimatedTransitioning.swift in Sources */,
 				D7106AFE2084F1F90066B72F /* StoreAttachmentFile.swift in Sources */,
 				D744B6BE205827C3008AEE83 /* BlockNameRestaurantView.swift in Sources */,
 				D7954B7A2068A90E00F55F49 /* GalleryView.swift in Sources */,
@@ -1148,6 +1163,7 @@
 				D7E40AD42085A7F30000FB1B /* ProductCategory.swift in Sources */,
 				D7E40ADC2085AF710000FB1B /* OrderDetail.swift in Sources */,
 				D7E40ADE2085B0850000FB1B /* Shipper.swift in Sources */,
+				D7621C7E208AE2BE0050D3AC /* TransitionConfig.swift in Sources */,
 				D72F11352042D87E0027A319 /* BasePresentController.swift in Sources */,
 				D744B6AB205805D5008AEE83 /* DetailsRestaurantView.swift in Sources */,
 				D72F112E2042D7510027A319 /* Support.swift in Sources */,
